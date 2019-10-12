@@ -1,0 +1,7 @@
+/* const { colors } = require('tailwindcss/defaultTheme') */
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
