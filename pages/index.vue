@@ -20,22 +20,22 @@
 </template>
 
 <script>
+/* FIXME: NEED THESE ?*/
 import AppLogo from '~/components/AppLogo.vue'
+import ZNavbar from '~/components/ZNavbar.vue'
+import ZFooter from '~/components/ZFooter.vue'
 
 export default {
   components: {
-    AppLogo
-  }
+    AppLogo,
+    ZNavbar,
+    ZFooter,
+  },
 }
 </script>
 
 <style>
 
-h1 {
-
-  @apply .text-6xl .text-red-700 .bg-green-600;
-
-}
 /*
 .container {
   min-height: 100vh;

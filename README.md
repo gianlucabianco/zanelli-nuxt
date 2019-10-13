@@ -4,19 +4,24 @@
 
 ## DONE  
 
->   ## SCAFFOLDING FIX  
+#### SCAFFOLDING FIX  
 >   - Nuxt & routing properly configured
 >   - Tailwind properly configured
+>   - vueloader for SCSS
+>   - layout && some component drafted
 
->   ## INIT  
+#### INIT  
 >   - Scaffolding ( nuxt + tailwindcss + frontmatter ).
 >   - Dynamic routes.
 >   - YAML blogpost draft
 
 ## TODOS:  
->   - fix nuxt ( hot reload & routing seems slow ).
->   - set themes for tailwindcss.
->   - complete routing && Scaffolding.  
+``` bash
+>   - Serverless Contact form.  
+>   - Completing the layout.  
+>   - Components inside markdown testing.  
+>   - Optimize nuxt.config.js.  
+```
 
 ## Build Setup
 
