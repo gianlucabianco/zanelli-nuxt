@@ -1,7 +1,9 @@
 <template>
   <section class="container">
     <nuxt-link to="/posts">
-      POSTS
+      <h1>
+        POSTS
+      </h1>
     </nuxt-link>
     <!-- <ul
       v-for="(post, index) in posts"
@@ -28,6 +30,13 @@ export default {
 </script>
 
 <style>
+
+h1 {
+
+  @apply .text-6xl .text-red-700 .bg-green-600;
+
+}
+/*
 .container {
   min-height: 100vh;
   display: flex;
@@ -37,7 +46,7 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
@@ -56,4 +65,5 @@ export default {
 .links {
   padding-top: 15px;
 }
+*/
 </style>

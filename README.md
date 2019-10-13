@@ -3,17 +3,20 @@
 > Nuxt+Vue.js Landing && Markdown Blog
 
 ## DONE  
->
->   INIT  
+
+>   ## SCAFFOLDING FIX  
+>   - Nuxt & routing properly configured
+>   - Tailwind properly configured
+
+>   ## INIT  
 >   - Scaffolding ( nuxt + tailwindcss + frontmatter ).
 >   - Dynamic routes.
 >   - YAML blogpost draft
->
->   # todos:  
+
+## TODOS:  
 >   - fix nuxt ( hot reload & routing seems slow ).
 >   - set themes for tailwindcss.
 >   - complete routing && Scaffolding.  
->   
 
 ## Build Setup
 
