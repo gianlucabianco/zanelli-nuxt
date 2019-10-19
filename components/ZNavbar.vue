@@ -43,26 +43,26 @@
 
 .z-navbar {
 
-      @apply .flex .w-full .fixed .h-20 .bg-red-200 .z-10;
+      @apply flex w-full fixed h-20 bg-red-200 z-10;
 
       &__menu,
       &__search {
 
-        @apply .flex .self-center .justify-center .w-16 .bg-blue-200 .px-2;
+        @apply flex self-center justify-center w-16 bg-blue-200 px-2;
 
       }
 
       &__main {
 
-        @apply .flex .bg-yellow-200 .w-full;
+        @apply flex bg-yellow-200 w-full;
 
         &--logo {
 
-          @apply .hidden;
+          @apply hidden;
 
           @screen sm {
 
-            @apply .flex .self-center .justify-center .w-20 .bg-green-200;
+            @apply flex self-center justify-center w-20 bg-green-200;
 
           }
 
@@ -70,23 +70,23 @@
 
         &--title {
 
-          @apply .flex .self-center .flex-col .px-2;
+          @apply flex self-center flex-col px-2;
 
           @screen sm {
 
-            @apply .px-4;
+            @apply px-4;
 
           }
 
           &--name {
 
-            @apply .text-xl;
+            @apply text-xl;
 
           }
 
           &--job {
 
-            @apply .text-base;
+            @apply text-base;
 
           }
 

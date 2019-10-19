@@ -4,6 +4,12 @@
 
 ## DONE  
 
+#### CONTACT FORM && LAYOUT DRAFT 
+>   - contact form w/ mailto:
+>   - Footer && contact form drafted in layout
+>   - 
+>   - 
+
 #### SCAFFOLDING FIX  
 >   - Nuxt & routing properly configured
 >   - Tailwind properly configured
@@ -17,10 +23,12 @@
 
 ## TODOS:  
 ``` bash
->   - Serverless Contact form.  
->   - Completing the layout.  
->   - Components inside markdown testing.  
->   - Optimize nuxt.config.js.  
+>   - test mailto:
+>   - set common scss && clean components style
+>   - Every color must be a variable && color/bg rules must be applied via tailwind syntax
+>   - Completing the layout
+>   - Components inside markdown testing
+>   - Optimize nuxt.config.js
 ```
 
 ## Build Setup

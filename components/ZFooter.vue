@@ -14,12 +14,14 @@
 .z-footer {
 
   min-height: 80px;
+  color: #767676;
+  background-color: #1E1E1E;
 
-  @apply .flex .items-center .justify-center .w-full .flex .text-xs .bg-red-500 .py-4 .px-4;
+  @apply flex items-center justify-center w-full py-4 px-4 text-xs;
 
   &__content {
 
-    @apply .text-center .leading-loose	;
+    @apply text-center leading-loose	;
 
   }
 

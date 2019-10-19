@@ -5,7 +5,6 @@ const path = require('path');
 // a filtered file list
 const glob = require('glob');
 
-// FIXME: DOESN'T WORK ?
 // generates the dynamic routes for MD files
 var dynamicRoutes = getDynamicPaths({
  '/posts': 'posts/*.md'
