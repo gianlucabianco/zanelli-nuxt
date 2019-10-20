@@ -1,16 +1,15 @@
 <template>
   <div
-    style="background-color: gray;"
+    class="z-layout"
   >
     <z-navbar />
 
     <div
-      class="content"
+      class="z-layout__content"
     >
       <!-- FIXME find a better solution for .spacer -->
       <div
-        class="spacer"
-        style="height: 80px;"
+        class="z-layout__content__spacer"
       />
       <nuxt/>
     </div>
@@ -38,9 +37,13 @@ export default {
   },
 }
 </script>
+<style
+  lang="scss"
+>
 
-<style>
+  /* FIXME: SCOPED STYLE ?? */
 
+  /* FIXME: move in common scss */
   html {
     font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
@@ -53,8 +56,27 @@ export default {
   }
 
   *, *:before, *:after {
-    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .z-layout {
+
+    background-color: #F2F2F2;
+
+    &__content {
+
+      min-height: 400px;
+
+      &__spacer {
+
+        height: 80px;
+
+      }
+
+    }
+
   }
 
 </style>
