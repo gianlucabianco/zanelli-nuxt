@@ -1,9 +1,9 @@
 <template>
   <div class="z-who">
     <div class="z-who__description">
-      <div id="description" class="z-who__description--text">
+      <div id="description" class="z-who__description__text">
         <h2
-          class="z-who__description--text__title"
+          class="z-who__description__text__title"
         >
           Chi sono
         </h2>
@@ -29,7 +29,7 @@
           Ricevo nel mio studio in centro a Imola, in Via Milani 24.
         </p>
         <a
-          class="z-who__description--text__contact-btn"
+          class="z-who__description__text__contact-btn"
           @click="scrollTo('contact')"
         >
           CONTATTAMI
@@ -68,7 +68,7 @@
 
       @apply h-full;
 
-        &--text {
+        &__text {
 
           @apply p-4 z-20;
 

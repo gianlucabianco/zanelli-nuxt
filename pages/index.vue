@@ -2,6 +2,7 @@
   <section class="index">
     <z-hero />
     <z-who />
+    <z-blog-posts />
 
     <nuxt-link to="/posts">
       <h1>
@@ -29,12 +30,14 @@ import ZNavbar from '~/components/ZNavbar.vue'
 import ZFooter from '~/components/ZFooter.vue'
 import ZHero from '~/components/ZHero.vue'
 import ZWho from '~/components/ZWho.vue'
+import ZBlogPosts from '~/components/ZBlogPosts.vue'
 
 export default {
   components: {
     AppLogo,
     ZNavbar,
     ZFooter,
+    ZBlogPosts,
     ZWho,
     ZHero,
   },
