@@ -69,6 +69,14 @@ export default {
 
       min-height: 400px;
 
+      @apply w-full;
+
+      @screen lg {
+
+        @apply w-3/4 mx-auto;
+
+      }
+
       &__spacer {
 
         height: 80px;

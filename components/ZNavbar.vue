@@ -44,7 +44,7 @@
 .z-navbar {
 
       border: 1px solid #F2F2F2;
-      @apply flex w-full fixed h-20 bg-white z-10;
+      @apply flex w-full fixed h-20 bg-white z-20;
 
       &__menu,
       &__search {
@@ -108,4 +108,5 @@
       }
 
     }
+
 </style>
