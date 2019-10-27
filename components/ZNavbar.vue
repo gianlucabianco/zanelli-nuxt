@@ -44,7 +44,15 @@
 .z-navbar {
 
       border: 1px solid #F2F2F2;
-      @apply flex w-full fixed h-20 bg-white z-20;
+      @apply flex w-full fixed h-20 bg-white z-30;
+
+      /* @apply w-full;
+
+      @screen xl {
+
+        @apply w-3/4 mx-auto;
+
+      } */
 
       &__menu,
       &__search {
@@ -56,6 +64,12 @@
       &__main {
 
         @apply flex w-full;
+
+        @screen xl {
+
+          @apply w-3/4 mx-auto;
+
+        }
 
         &--logo {
 

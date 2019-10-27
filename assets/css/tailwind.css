@@ -2,6 +2,12 @@
 
 @tailwind base;
 
+@font-face {
+  font-family: Signika Light;
+  font-weight: 400;
+  src: url(./fonts/Signika-Light.woff) format("woff");
+}
+
 @tailwind components;
 
 @tailwind utilities;

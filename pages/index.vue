@@ -1,6 +1,7 @@
 <template>
   <section class="index">
     <z-hero />
+    <z-who />
 
     <nuxt-link to="/posts">
       <h1>
@@ -27,12 +28,14 @@ import AppLogo from '~/components/AppLogo.vue'
 import ZNavbar from '~/components/ZNavbar.vue'
 import ZFooter from '~/components/ZFooter.vue'
 import ZHero from '~/components/ZHero.vue'
+import ZWho from '~/components/ZWho.vue'
 
 export default {
   components: {
     AppLogo,
     ZNavbar,
     ZFooter,
+    ZWho,
     ZHero,
   },
 }
@@ -42,10 +45,4 @@ export default {
   lang="scss"
   scoped
 >
-.container {
-
-  @apply w-full m-0;
-
-}
-
 </style>

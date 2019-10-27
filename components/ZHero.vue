@@ -42,7 +42,19 @@
 
       @screen md {
 
-        height: 650px;
+        height: 440px;
+
+      }
+
+      @screen lg {
+
+        height: 520px;
+
+      }
+
+      @screen xl {
+
+        height: 600px;
 
       }
 
@@ -58,7 +70,19 @@
 
           @screen md {
 
-            height: 650px;
+            height: 440px;
+
+          }
+
+          @screen lg {
+
+            height: 520px;
+
+          }
+
+          @screen xl {
+
+            height: 600px;
 
           }
 
@@ -66,35 +90,41 @@
 
         &--text {
 
-          @apply absolute h-full px-4 py-8 text-white text-xl z-20;
+          @apply absolute bottom-0 px-4 py-4 text-white text-xl z-20;
 
           p {
 
             @apply mb-4;
 
+            &:last-child {
+
+              @apply m-0;
+
+            }
+
+          }
+
+          @screen sm {
+
+            @apply py-8 px-8 text-2xl;
+
           }
 
           @screen md {
 
-            top: 33%;
-
-            @apply pl-12 text-2xl w-2/3 bottom-0;
+            @apply py-12 px-12 text-2xl;
 
           }
 
           @screen lg {
 
-            top: 40%;
-
-            @apply pl-16;
+            @apply py-16 px-16;
 
           }
 
           @screen xl {
 
-            top: 46%;
-
-            @apply pl-24;
+            @apply px-24 text-3xl;
 
           }
 

@@ -45,7 +45,8 @@ export default {
 
   /* FIXME: move in common scss */
   html {
-    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Signika Light";
+    /* font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -71,7 +72,7 @@ export default {
 
       @apply w-full;
 
-      @screen lg {
+      @screen xl {
 
         @apply w-3/4 mx-auto;
 

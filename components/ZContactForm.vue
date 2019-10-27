@@ -1,5 +1,5 @@
 <template>
-  <div class="z-contact-form">
+  <div id="contact" class="z-contact-form">
     <form class="z-contact-form__module">
       <div
          class="z-contact-form__module--description"
@@ -11,7 +11,7 @@
           Si riceve su appuntamento in Via Milani, 24 - 40026 Imola (BO).
         </p>
         <p>
-          Per richiedere informazioni è possibile chiamare il 348 729 31 58 oppure scrivere all'indirizzo info@francescazanelli.it
+          Per richiedere informazioni è possibile chiamare il 348 72 93 158 (anche sms o wa) oppure scrivere all'indirizzo info@francescazanelli.it
         </p>
         <p>
           E' possibile inviare una mail utilizzando direttamente il form seguente.

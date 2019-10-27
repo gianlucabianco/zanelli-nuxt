@@ -4,11 +4,13 @@
 
 ## DONE  
 
-#### CONTACT FORM && LAYOUT DRAFT 
+#### HERO && WHOAMI DRAFT
+>   - Layout && overlay
+>   - scrollTo function
+
+#### CONTACT FORM && LAYOUT DRAFT
 >   - contact form w/ mailto:
 >   - Footer && contact form drafted in layout
->   - 
->   - 
 
 #### SCAFFOLDING FIX  
 >   - Nuxt & routing properly configured
@@ -23,6 +25,8 @@
 
 ## TODOS:  
 ``` bash
+>   - clean components template && script && style
+>   - choose a font, put rules in scss common
 >   - test mailto:
 >   - set common scss && clean components style
 >   - Every color must be a variable && color/bg rules must be applied via tailwind syntax
