@@ -2,6 +2,8 @@
   <div
     class="z-layout"
   >
+    <z-undelay />
+
     <z-navbar />
 
     <div
@@ -23,6 +25,8 @@
 
 <script>
 import ZNavbar from '~/components/ZNavbar.vue'
+import ZMenu from '~/components/ZMenu.vue'
+import ZUnderlay from '~/components/ZUnderlay.vue'
 import ZContactForm from '~/components/ZContactForm.vue'
 import ZFooter from '~/components/ZFooter.vue'
 /* import AppLogo for testing purposes. Remove after complete. */
@@ -31,6 +35,8 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     ZNavbar,
+    ZMenu,
+    ZUnderlay,
     ZContactForm,
     ZFooter,
     AppLogo,

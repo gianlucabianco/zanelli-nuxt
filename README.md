@@ -7,8 +7,7 @@
 #### CONTACT FORM && LAYOUT DRAFT 
 >   - contact form w/ mailto:
 >   - Footer && contact form drafted in layout
->   - 
->   - 
+>   - menu && menu animation first draft
 
 #### SCAFFOLDING FIX  
 >   - Nuxt & routing properly configured
@@ -23,12 +22,14 @@
 
 ## TODOS:  
 ``` bash
->   - test mailto:
->   - set common scss && clean components style
->   - Every color must be a variable && color/bg rules must be applied via tailwind syntax
->   - Completing the layout
->   - Components inside markdown testing
->   - Optimize nuxt.config.js
+- menu && menu animations
+- set trnsitions globally
+- test mailto:
+- set common scss && clean components style
+- Every color must be a variable && color/bg rules must be applied via tailwind syntax
+- Completing the layout
+- Components inside markdown testing
+- Optimize nuxt.config.js
 ```
 
 ## Build Setup
