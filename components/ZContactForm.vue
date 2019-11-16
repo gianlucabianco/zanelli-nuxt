@@ -1,5 +1,5 @@
 <template>
-  <div class="z-contact-form">
+  <div id="contact-form" class="z-contact-form">
     <form class="z-contact-form__module">
       <div
          class="z-contact-form__module--description"

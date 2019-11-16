@@ -1,11 +1,9 @@
 <template>
-  <section class="container">
+  <section class="container" style="height: 2000px;">
     <nuxt-link to="/posts">
       <h1>
         POSTS
       </h1>
-
-      <z-underlay />
 
     </nuxt-link>
     <!-- <ul
@@ -32,7 +30,6 @@ import AppLogo from '~/components/AppLogo.vue'
 import ZNavbar from '~/components/ZNavbar.vue'
 import ZMenu from '~/components/ZMenu.vue'
 // import ZHamburgerMenu from '~/components/ZHamburgerMenu.vue'
-import ZUnderlay from '~/components/ZUnderlay.vue'
 import ZFooter from '~/components/ZFooter.vue'
 
 export default {
@@ -41,7 +38,6 @@ export default {
     ZNavbar,
     ZMenu,
     // ZHamburgerMenu,
-    ZUnderlay,
     ZFooter,
   },
 }

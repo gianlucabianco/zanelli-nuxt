@@ -2,12 +2,7 @@
   <div class="z-hamburger-menu">
 
     <!-- This checkbox will give us the toggle behavior, it will be hidden, but functional -->
-    <input id="toggle" type="checkbox" @click="toggleUnderlay()" >
-    <!-- FIXME:  -->
-    <!-- <a
-      v-if="underlay"
-      class="z-underlay"
-    /> -->
+    <input id="toggle" type="checkbox" v-model="isMenu">
 
     <!-- IMPORTANT: Any element that we want to modify when the checkbox state changes go here, being "sibling" of the checkbox element -->
 
@@ -18,43 +13,59 @@
     </label>
 
     <!-- The nav menu -->
-    <nav class="nav">
-        <a class="nav-item" href="">menu item</a>
-        <a class="nav-item" href="">menu item</a>
-        <a class="nav-item" href="">menu item</a>
-        <a class="nav-item" href="">menu item</a>
-        <a class="nav-item" href="">menu item</a>
-        <a class="nav-item" href="">menu item</a>
-        <a class="nav-item" href="">menu item</a>
-        <a class="nav-item" href="">menu item</a>
+    <nav
+      class="nav"
+    >
+        <a
+        v-for="(item, index) in menuItems"
+        :key="index"
+        class="nav-item"
+        :href="item.href"
+        @click="isMenu = false"
+        >
+          {{ item.content }}
+        </a>
     </nav>
 
-    <!-- Just dummy content like in the animated gif -->
-    <!-- <section class="dummy-content">
-        <div class="circle"></div>
-        <div class="text">
-            <span></span><span></span>
-        </div>
-        <div class="square-top"></div>
-        <div class="square-behind"></div>
-    </section> -->
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    underlay: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  methods: {
-    toggleUnderlay() {
-
-      this.underlay = ! this.underlay;
-
-    },
+  data() {
+    return {
+      isMenu: false,
+      menuItems: [
+        {
+          content: 'Chi sono',
+          href: 'https://increment.com/',
+        },
+        {
+          content: 'Cosa Faccio',
+          href: 'https://increment.com/',
+        },
+        {
+          content: 'Come Lavoro',
+          href: 'https://increment.com/',
+        },
+        {
+          content: 'Analisi Transazionale',
+          href: 'https://increment.com/',
+        },
+        {
+          content: 'La Psicoterapia',
+          href: 'https://increment.com/',
+        },
+        {
+          content: 'Blog',
+          href: 'https://increment.com/',
+        },
+        {
+          content: 'Contatti',
+          href: '#contact-form',
+        },
+      ],
+    };
   },
 }
 </script>
@@ -83,7 +94,7 @@ export default {
   #toggle:focus {
 
     & ~ .toggle-container .button-toggle {
-      box-shadow: 0 0 0 8px white, inset 0 0 0 20px white;
+      box-shadow: 0 0 0 8px rgba(0, 0, 0, 0), inset 0 0 0 20px rgba(0, 0, 0, 0);
     }
   }
 
@@ -92,11 +103,13 @@ export default {
     /* Any element you need to change the style if menu is open goes here, using the sibling selector (~) as follows */
 
     /* Making the "X" icon using `:before` and `:after` pseudo-elements */
+    /* the box shadow define the dimensions and the color of the open state menu (default, focus and hover) */
+    /* (4000 px is a work around to fill the screen) */
     & ~ .toggle-container .button-toggle {
-      box-shadow: 0 0 0 750px white, inset 0 0 0 20px white;
+      box-shadow: 0 0 0 4000px white, inset 0 0 0 20px white;
 
       &:hover {
-        box-shadow: 0 0 0 750px white, inset 0 0 0 20px white, 0 0 0 8px white, inset 0 0 0 20px white;
+        box-shadow: 0 0 0 4000px white, inset 0 0 0 20px white, 0 0 0 8px white, inset 0 0 0 20px white;
       }
 
       &:before {
@@ -107,33 +120,31 @@ export default {
         transform: translateY(-50%) rotate(-45deg) scale(1);
       }
 
-      .z-underlay {
-
-        @apply block;
-
-      }
     }
 
+    /* the box shadow define the dimensions and the color of the open state menu */
     &:focus ~ .toggle-container .button-toggle {
-      box-shadow: 0 0 0 750px white, inset 0 0 0 20px white, 0 0 0 8px white, inset 0 0 0 20px white;
+      box-shadow: 0 0 0 4000px white, inset 0 0 0 20px white, 0 0 0 8px white, inset 0 0 0 20px white;
     }
 
     /* Open nav */
     & ~ .nav {
-      margin-bottom: 100px;
       pointer-events: auto;
       transform: translate(50px, 50px);
+      margin: 0; /*INSERT MEDIAQUERIES TO MANAGE A BETTER SPACING FOR RES DIFFERENT FROM MOBILE*/
 
       /* Restoring nav items from "lines" in the menu icon */
       .nav-item {
+        padding-bottom: 32px;
+        margin-bottom: 16px;
         color: black;
         letter-spacing: 0;
         height: 40px;
         line-height: 40px;
-        margin-top: 0;
         opacity: 1;
         transform: scaleY(1);
         transition: $transition-duration, opacity 0.1s;
+        font-size: 24px;
 
         /* Setting delays for the nav items in open transition */
         @for $i from 1 through $items {
@@ -150,6 +161,11 @@ export default {
         &:before {
           opacity: 0;
         }
+
+        &:hover {
+          background-color: rgba(128, 128, 128, 0.1);
+
+        }
       }
     }
 
@@ -165,7 +181,7 @@ export default {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    /* border-radius: 100%; */
+    border-radius: 100%;
     transition: $transition-duration + 0.1;
 
     /* Shadow on hover */
@@ -218,7 +234,7 @@ export default {
     clear: both;
     color: transparent;
     font-size: 14px;
-    letter-spacing: -6.2px;
+    letter-spacing: -7.5px;
     height: 7px;
     line-height: 7px;
     text-transform: uppercase;
@@ -228,18 +244,23 @@ export default {
 
     /* Setting delays for the nav items in close transition */
     @for $i from 1 through $items {
+
       &:nth-child(#{$i}) {
+
         $delay: ($i - 1) * $transition-delay;
         transition-delay: $delay;
+
         &:before {
           transition-delay: $delay;
         }
+
       }
+
     }
 
     /* Adjusting width for the first line */
     &:nth-child(1) {
-      letter-spacing: -6.8px;
+      letter-spacing: -5.5px;
     }
 
     /* Adjusting width for the second line */
@@ -269,13 +290,6 @@ export default {
     }
 
   }
-
-
-}
-
-.z-underlay {
-
-  @apply w-screen h-screen bg-gray-900 opacity-75 absolute;
 
 }
 </style>

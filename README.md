@@ -4,7 +4,11 @@
 
 ## DONE  
 
-#### CONTACT FORM && LAYOUT DRAFT 
+#### MENU DRAFT
+>   - Animations
+>   - Data structure draft
+
+#### CONTACT FORM && LAYOUT DRAFT
 >   - contact form w/ mailto:
 >   - Footer && contact form drafted in layout
 >   - menu && menu animation first draft
@@ -22,8 +26,8 @@
 
 ## TODOS:  
 ``` bash
-- menu && menu animations
-- set trnsitions globally
+- Menu Business logic && cleaning, Data structure, Routing
+- set transitions globally
 - test mailto:
 - set common scss && clean components style
 - Every color must be a variable && color/bg rules must be applied via tailwind syntax

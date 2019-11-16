@@ -26,7 +26,6 @@
 <script>
 import ZNavbar from '~/components/ZNavbar.vue'
 import ZMenu from '~/components/ZMenu.vue'
-import ZUnderlay from '~/components/ZUnderlay.vue'
 import ZContactForm from '~/components/ZContactForm.vue'
 import ZFooter from '~/components/ZFooter.vue'
 /* import AppLogo for testing purposes. Remove after complete. */
@@ -36,7 +35,6 @@ export default {
   components: {
     ZNavbar,
     ZMenu,
-    ZUnderlay,
     ZContactForm,
     ZFooter,
     AppLogo,
