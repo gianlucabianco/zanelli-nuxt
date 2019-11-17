@@ -137,6 +137,7 @@ export default {
       .nav-item {
         padding-bottom: 32px;
         margin-bottom: 16px;
+        border-bottom: 1px solid darkgrey;
         color: black;
         letter-spacing: 0;
         height: 40px;
@@ -144,7 +145,7 @@ export default {
         opacity: 1;
         transform: scaleY(1);
         transition: $transition-duration, opacity 0.1s;
-        font-size: 24px;
+        font-size: 20px;
 
         /* Setting delays for the nav items in open transition */
         @for $i from 1 through $items {
@@ -166,6 +167,15 @@ export default {
           background-color: rgba(128, 128, 128, 0.1);
 
         }
+
+        @media (min-width: 768px) {
+
+          padding-right: 32px;
+          padding-left: 32px;
+          font-size: 24px;
+            
+        }
+
       }
     }
 
@@ -190,7 +200,7 @@ export default {
     }
 
     /* Making the "X" icon using `:before` and `:after` pseudo-elements */
-    /* Initially hidden because `scale(0)` transformation */
+    /* Initially hidden because `scale(0)` tranredsformation */
     /* HAMBURGER STATE: CLOSED */
     &:before, &:after {
       position: absolute;

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <z-post />
     <div class="post-title">
       <br>
       <h2>Title: {{ title }}</h2>
@@ -36,7 +37,12 @@
   </div>
 </template>
 <script>
+  import ZPost from '~/components/ZPost.vue'
+
   export default {
+    components: {
+      ZPost,
+    },
     async asyncData({ params }) {
       try {
 

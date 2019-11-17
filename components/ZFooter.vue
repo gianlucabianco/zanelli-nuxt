@@ -1,7 +1,7 @@
 <template>
   <div class="z-footer">
     <span class="z-footer__content">
-      Copyright Dott.ssa Francesca Zanelli - Via Milani, 24 - 40026 Imola (BO) - C.F. ZNLFNC87M70C265P - P.IVA 03504591201 - Ordine degli Psicologi dell'Emilia Romagna n. 7672 - <nuxt-link to="/">Privacy Policy</nuxt-link> - Design and concept by <a href="https://gianlucabianco.dev/">gianlucabianco.dev</a>
+      Copyright Dott.ssa Francesca Zanelli - Via Milani, 24 - 40026 Imola (BO) - C.F. ZNLFNC87M70C265P - P.IVA 03504591201 - Ordine degli Psicologi dell'Emilia Romagna n. 7672 - <nuxt-link to="/">Privacy Policy</nuxt-link> - Design and development by <a href="https://gianlucabianco.dev/">gianlucabianco.dev</a>
     </span>
   </div>
 </template>
