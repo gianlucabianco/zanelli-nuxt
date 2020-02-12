@@ -9,7 +9,7 @@
       <h3>Tags: {{ tags }}</h3>
       <ul
         v-for="(tag, index) in tags"
-        v-bind:key="index"
+        :key="index"
       >
         <li>
           - {{ tag }}
@@ -19,7 +19,7 @@
       <h3>Related Posts: {{ relateds }}</h3>
       <ul
         v-for="(related, index) in relateds"
-        v-bind:key="index"
+        :key="index"
       >
         <li>
           Related title {{ related.title }}
@@ -33,7 +33,9 @@
         <br>
       </ul>
     </div>
-    <div class="content" v-html="post.html"></div>
+    <div 
+      class="content" 
+      v-html="post.html"/>
   </div>
 </template>
 <script>
