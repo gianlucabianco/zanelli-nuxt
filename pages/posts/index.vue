@@ -1,26 +1,27 @@
 <template>
-    <div>
-        <h1>My blog posts</h1>
-        <br>
-        <ul>
-            <li
-              v-for="post in posts"
-              :key="post.attributes.title" style="color: red"
-            >
-              <!-- {{ post }} -->
-              <!-- {{ post.attributes.slug }} -->
-                <nuxt-link :to="`posts/${post.attributes.slug}`">
-                  {{ post.attributes.title }}
-                </nuxt-link>
-            </li>
-            <br>
-        </ul>
-        <nuxt-link
-          to="/"
-        >
-          home
+  <div>
+    <h1>My blog posts</h1>
+    <br>
+    <ul>
+      <li
+        v-for="post in posts"
+        :key="post.attributes.title" 
+        style="color: red"
+      >
+        <!-- {{ post }} -->
+        <!-- {{ post.attributes.slug }} -->
+        <nuxt-link :to="`posts/${post.attributes.slug}`">
+          {{ post.attributes.title }}
         </nuxt-link>
-    </div>
+      </li>
+      <br>
+    </ul>
+    <nuxt-link
+      to="/"
+    >
+      home
+    </nuxt-link>
+  </div>
 </template>
 <script>
   export default {
