@@ -16,15 +16,14 @@
           class="z-post__main__title__header"
         >
           <h1>
-            I test in prod
+            How to build a startup engineering team in five simple steps
           </h1>
           <div
             class="z-post__main__title__header__dummy-content"
-          >
-          </div>
+          />
         </div>
         <p
-            class="z-post__main__title__description"
+          class="z-post__main__title__description"
         >
           Testing in production is a superpower. It’s our inability to acknowledge it that’s the trouble.
         </p>
@@ -32,7 +31,7 @@
 
       <div class="z-post__main__details">
         <div class="z-post__main__details__date">
-            08/08/2020
+          08/08/2020
         </div>
         <div class="z-post__main__details__tags">
           <div class="z-post__main__details__tags__tag">
@@ -63,11 +62,15 @@
         <div class="z-post__main__divider__border" />
       </div>
 
-      <div class="" style="background-color: lightcoral;">
+      <div 
+        class="" 
+        style="background-color: lightcoral;">
         content
       </div>
 
-      <div class="" style="background-color: cyan;">
+      <div 
+        class="" 
+        style="background-color: cyan;">
         related-posts
       </div>
 
@@ -118,7 +121,7 @@
 
         &__header {
 
-          @apply flex text-5xl;
+          @apply flex font-bold text-4xl;
 
           h1 {
 
