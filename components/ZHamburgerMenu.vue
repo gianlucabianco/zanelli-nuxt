@@ -2,29 +2,34 @@
   <div class="z-hamburger-menu">
 
     <!-- This checkbox will give us the toggle behavior, it will be hidden, but functional -->
-    <input id="toggle" type="checkbox" v-model="isMenu">
+    <input 
+      id="toggle" 
+      type="checkbox" 
+      v-model="isMenu">
 
     <!-- IMPORTANT: Any element that we want to modify when the checkbox state changes go here, being "sibling" of the checkbox element -->
 
     <!-- This label is tied to the checkbox, and it will contain the toggle "buttons" -->
-    <label class="toggle-container" for="toggle">
-        <!-- If menu is open, it will be the "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
-        <span class="button button-toggle"></span>
+    <label 
+      class="toggle-container" 
+      for="toggle">
+      <!-- If menu is open, it will be the "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
+      <span class="button button-toggle"/>
     </label>
 
     <!-- The nav menu -->
     <nav
       class="nav"
     >
-        <a
+      <a
         v-for="(item, index) in menuItems"
         :key="index"
         class="nav-item"
         :href="item.href"
         @click="isMenu = false"
-        >
-          {{ item.content }}
-        </a>
+      >
+        {{ item.content }}
+      </a>
     </nav>
 
   </div>
