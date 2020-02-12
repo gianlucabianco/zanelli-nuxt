@@ -2,7 +2,10 @@
 
 > Nuxt+Vue.js Landing && Markdown Blog
 
-## DONE  
+## DONE 
+
+#### HAMBURGER MENU ICON
+>   - component (open, close state, BL, animation)
 
 #### MENU DRAFT
 >   - Animations
@@ -26,6 +29,8 @@
 
 ## TODOS:  
 ``` bash
+- remove z-hamburger-menu component and imports/registrations
+- clean z-hamburger-icon css w/ tailwind
 - Menu Business logic && cleaning, Data structure, Routing
 - set transitions globally
 - test mailto:
