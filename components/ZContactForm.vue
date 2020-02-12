@@ -1,8 +1,10 @@
 <template>
-  <div id="contact-form" class="z-contact-form">
+  <div 
+    id="contact-form" 
+    class="z-contact-form">
     <form class="z-contact-form__module">
       <div
-         class="z-contact-form__module--description"
+        class="z-contact-form__module--description"
       >
         <h3>
           CONTATTI
