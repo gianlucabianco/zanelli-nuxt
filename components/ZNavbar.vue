@@ -1,34 +1,34 @@
 <template>
   <div class="z-navbar">
     <div class="z-navbar__main">
-      <z-hamburger-menu />
-      <div class="z-navbar__main--logo">
+      <div class="z-navbar__main--title">
         <nuxt-link to="/">
-          Logo
+          <h2
+            class="z-navbar__main--title--name"
+          >
+            Dott.ssa Francesca Zanelli
+          </h2>
+          <h1
+            class="z-navbar__main--title--job"
+          >
+            Psicologa - Psicoterapeuta
+          </h1>
         </nuxt-link>
       </div>
-      <div class="z-navbar__main--title">
-        <h2
-          class="z-navbar__main--title--name"
-        >
-          Dott.ssa Francesca Zanelli
-        </h2>
-        <h1
-          class="z-navbar__main--title--job"
-        >
-          Psicologa - Psicoterapeuta
-        </h1>
-      </div>
+      <z-hamburger-icon />
     </div>
   </div>
 </template>
 
 <script>
   import ZHamburgerMenu from '~/components/ZHamburgerMenu.vue'
+  import ZHamburgerIcon from '~/components/ZHamburgerIcon.vue'
 
   export default {
     components: {
       ZHamburgerMenu,
+      ZHamburgerIcon,
+
     },
   }
 </script>
@@ -38,92 +38,80 @@
   scoped
 >
 
-.z-navbar {
+  .z-navbar {
 
-  @apply flex w-full fixed h-20 bg-white z-10;
+    @apply flex w-full fixed h-20 bg-white z-10;
 
-  &::after {
-    content:'';
-    width:100%;
-    position: absolute;
-    left:0;
-    bottom:-2px;
-    height: 2px;
-    background: #333;
-    background: -webkit-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
-    background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
-    background: -ms-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
-    background: -o-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
-  }
-
-  &__menu,
-  &__search {
-
-    @apply flex self-center justify-center w-16 px-2;
-
-  }
-
-  &__main {
-
-    @apply flex w-full relative;
-
-    @screen lg {
-
-      @apply w-3/4 mx-auto;
-
+    &::after {
+      content:'';
+      width:100%;
+      position: absolute;
+      left:0;
+      bottom:-2px;
+      height: 2px;
+      background: #333;
+      background: -webkit-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
+      background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
+      background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
+      background: -ms-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
+      background: -o-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(91,91,91,1) 0%, rgba(214,214,214,1) 100%);
     }
 
-    &--logo {
+    /* &__menu,
+    &__search {
 
-      @apply hidden;
+      @apply flex self-center justify-center w-16 px-2;
 
-      @screen sm {
+    } */
 
-        @apply flex self-center justify-center w-20;
+    &__main {
+
+      @apply flex justify-between w-full relative;
+
+      @screen lg {
+
+        @apply w-3/4 mx-auto;
 
       }
 
-    }
+      &--title {
 
-    &--title {
+        @apply flex self-center flex-col px-2;
 
-      @apply flex self-center flex-col px-2;
+        @screen lg {
 
-      @screen sm {
-
-        @apply px-4;
-
-      }
-
-      &--name {
-
-        @media screen and (max-width: 320px) {
-
-          font-size: 1rem;
+          @apply px-0;
 
         }
 
-        @apply text-xl;
+        &--name {
 
-      }
+          @media screen and (max-width: 320px) {
 
-      &--job {
+            font-size: 1rem;
 
-        @media screen and (max-width: 320px) {
+          }
 
-          font-size: 0.9rem;
+          @apply text-xl;
 
         }
 
-        @apply text-base;
+        &--job {
+
+          @media screen and (max-width: 320px) {
+
+            font-size: 0.9rem;
+
+          }
+
+          @apply text-base;
+
+        }
 
       }
 
     }
 
   }
-
-}
 </style>
