@@ -1,5 +1,7 @@
 <template>
-  <section class="container" style="height: 2000px;">
+  <section 
+    class="container" 
+    style="height: 2000px;">
     <nuxt-link to="/posts">
       <h1>
         POSTS
