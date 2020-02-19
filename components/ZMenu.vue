@@ -1,31 +1,78 @@
 <template>
-  <div
-    class="z-menu"
-  >
-    <a
-      class="z-menu__button"
-    >
-      menu
-    </a>
+  <div class="z-menu">
+    <!-- todo: build two separate component for hamburger and "x" closing icon s -->
+    <z-hamburger-icon
+      style="position: fixed; top: 0; right: 0;"
+      @toggleMenu="$emit('toggleMenu')"
+    />
+    <ul class="z-menu__content">
+      <li
+        v-for="(item, index) in firstLeveMenuItems"
+        :key="index"
+        class="z-menu__content__item"
+      >
+        <a
+          class="z-menu__content__item__anchor"
+          style="color: black; font-size: 26px; z-index: 90;"
+        >
+          {{ item }}
+        </a>
+      </li>
+    </ul>
   </div>
 </template>
 
-<style
-  lang="scss"
->
-  .z-menu {
+<script>
+import ZHamburgerIcon from "~/components/ZHamburgerIcon.vue";
 
-    /* FIXME: add margins to bb */
-    border-bottom: 2px solid black;
-    transition: 0.5s ease-in-out;
+export default {
+  components: {
+    ZHamburgerIcon,
+  },
 
-    @apply absolute right-0 flex self-center mr-6 py-1 px-3 cursor-pointer;
+  data() {
+    return {
+      firstLeveMenuItems: [
+        "COSA FACCIO",
+        'COME LAVORO',
+        "ANALISI TRANSAZIONALE",
+        "LA PSICOTERAPIA",
+        "IL MIO STUDIO"
+      ],
+    };
+        },
+};
+</script>
 
-    &:hover {
+<style lang="scss">
+.z-menu {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e2e8f0;
+  z-index: 80;
+  overflow: hidden;
+  text-align: center;
 
-      @apply bg-black text-white;
+  &__content {
+    /*
+      padding: 8px 16px;
+      margin: 4px 0;
+      background-color: rgba(255, 231, 163,0.75);
+      */
 
+    &__item {
+      font-weight: 800;
+
+      /*
+        margin: 4px 0;
+        padding: 8px 16px;
+        background-color: rgba(255, 231, 163,0.75);
+        */
     }
-
   }
+}
 </style>

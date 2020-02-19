@@ -1,26 +1,18 @@
 <template>
   <div class="z-hamburger-menu">
-
-    <!-- This checkbox will give us the toggle behavior, it will be hidden, but functional -->
-    <input 
-      id="toggle" 
-      type="checkbox" 
-      v-model="isMenu">
+        <!-- This checkbox will give us the toggle behavior, it will be hidden, but functional -->
+    <input id="toggle" v-model="isMenu" type="checkbox" />
 
     <!-- IMPORTANT: Any element that we want to modify when the checkbox state changes go here, being "sibling" of the checkbox element -->
 
     <!-- This label is tied to the checkbox, and it will contain the toggle "buttons" -->
-    <label 
-      class="toggle-container" 
-      for="toggle">
+    <label class="toggle-container" for="toggle">
       <!-- If menu is open, it will be the "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
-      <span class="button button-toggle"/>
+      <span class="button button-toggle" />
     </label>
 
     <!-- The nav menu -->
-    <nav
-      class="nav"
-    >
+    <nav class="nav">
       <a
         v-for="(item, index) in menuItems"
         :key="index"
@@ -31,8 +23,7 @@
         {{ item.content }}
       </a>
     </nav>
-
-  </div>
+    </div>
 </template>
 
 <script>
@@ -43,44 +34,40 @@ export default {
       menuItems: [
         {
           content: 'Chi sono',
-          href: 'https://increment.com/',
+          href: 'https://increment.com/'
         },
         {
           content: 'Cosa Faccio',
-          href: 'https://increment.com/',
+          href: 'https://increment.com/'
         },
         {
           content: 'Come Lavoro',
-          href: 'https://increment.com/',
+          href: 'https://increment.com/'
         },
         {
           content: 'Analisi Transazionale',
-          href: 'https://increment.com/',
+          href: 'https://increment.com/'
         },
         {
           content: 'La Psicoterapia',
-          href: 'https://increment.com/',
+          href: 'https://increment.com/'
         },
         {
           content: 'Blog',
-          href: 'https://increment.com/',
+          href: 'https://increment.com/'
         },
         {
           content: 'Contatti',
-          href: '#contact-form',
+          href: '#contact-form'
         },
       ],
     };
   },
-}
+};
 </script>
 
-<style
-  lang="scss"
-  scoped
->
+<style lang="scss" scoped>
 .z-hamburger-menu {
-
   @apply z-30;
 
   $items: 4;
@@ -97,7 +84,6 @@ export default {
   }
 
   #toggle:focus {
-
     & ~ .toggle-container .button-toggle {
       box-shadow: 0 0 0 8px rgba(0, 0, 0, 0), inset 0 0 0 20px rgba(0, 0, 0, 0);
     }
@@ -114,7 +100,8 @@ export default {
       box-shadow: 0 0 0 4000px white, inset 0 0 0 20px white;
 
       &:hover {
-        box-shadow: 0 0 0 4000px white, inset 0 0 0 20px white, 0 0 0 8px white, inset 0 0 0 20px white;
+        box-shadow: 0 0 0 4000px white, inset 0 0 0 20px white, 0 0 0 8px white,
+          inset 0 0 0 20px white;
       }
 
       &:before {
@@ -124,12 +111,12 @@ export default {
       &:after {
         transform: translateY(-50%) rotate(-45deg) scale(1);
       }
-
     }
 
     /* the box shadow define the dimensions and the color of the open state menu */
     &:focus ~ .toggle-container .button-toggle {
-      box-shadow: 0 0 0 4000px white, inset 0 0 0 20px white, 0 0 0 8px white, inset 0 0 0 20px white;
+      box-shadow: 0 0 0 4000px white, inset 0 0 0 20px white, 0 0 0 8px white,
+        inset 0 0 0 20px white;
     }
 
     /* Open nav */
@@ -170,20 +157,15 @@ export default {
 
         &:hover {
           background-color: rgba(128, 128, 128, 0.1);
-
         }
 
         @media (min-width: 768px) {
-
           padding-right: 32px;
           padding-left: 32px;
           font-size: 24px;
-            
         }
-
       }
     }
-
   }
 
   /* Toggle button */
@@ -201,15 +183,17 @@ export default {
 
     /* Shadow on hover */
     &:hover {
-      box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
     /* Making the "X" icon using `:before` and `:after` pseudo-elements */
     /* Initially hidden because `scale(0)` tranredsformation */
     /* HAMBURGER STATE: CLOSED */
-    &:before, &:after {
+    &:before,
+    &:after {
       position: absolute;
-      content: '';
+      content: "";
       top: 50%;
       left: 0;
       width: 100%;
@@ -217,8 +201,6 @@ export default {
       background-color: black;
       /* border-radius: 5px; */
       transition: $transition-duration;
-
-
     }
 
     &:before {
@@ -229,7 +211,6 @@ export default {
       transform: translateY(-50%) rotate(-45deg) scale(0);
     }
   }
-
 
   /* Menu */
   .nav {
@@ -259,18 +240,14 @@ export default {
 
     /* Setting delays for the nav items in close transition */
     @for $i from 1 through $items {
-
       &:nth-child(#{$i}) {
-
         $delay: ($i - 1) * $transition-delay;
         transition-delay: $delay;
 
         &:before {
           transition-delay: $delay;
         }
-
       }
-
     }
 
     /* Adjusting width for the first line */
@@ -294,7 +271,7 @@ export default {
     /* Getting the lines for the hamburger menu icon */
     &:before {
       position: absolute;
-      content: '';
+      content: "";
       top: 50%;
       left: 0;
       width: 100%;
@@ -303,8 +280,6 @@ export default {
       transform: translateY(-50%) scaleY(5);
       transition: $transition-duration;
     }
-
   }
-
 }
 </style>
