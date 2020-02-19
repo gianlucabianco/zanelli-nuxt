@@ -1,10 +1,10 @@
 <template>
   <div>
     <h1>My blog posts</h1>
-    <br>
+    <br >
     <ul>
-      <li
-        v-for="post in posts"
+      <li 
+        v-for="post in posts" 
         :key="post.attributes.title" 
         style="color: red"
       >
@@ -14,29 +14,28 @@
           {{ post.attributes.title }}
         </nuxt-link>
       </li>
-      <br>
+      <br >
     </ul>
-    <nuxt-link
-      to="/"
-    >
+    <nuxt-link to="/">
       home
     </nuxt-link>
   </div>
 </template>
 <script>
-  export default {
-    async asyncData() {
+    export default {
+  async asyncData() {
 
-      const resolve = require.context("~/content/", true, /\.md$/)
+            const resolve = require.context( "~/content/", true, /\.md$/ );
 
-      const imports = resolve.keys().map((key) => {
-        const [, name] = key.match(/\/(.+)\.md$/);
-        return resolve(key);
-      });
+    const imports = resolve.keys().map(key => {
+      const [, name] = key.match(/\/(.+)\.md$/);
 
-      return {
-        posts: imports
-      }
-    },
+      return resolve(key);
+            });
+
+            return {
+                posts: imports
+    };
   }
+};
 </script>
