@@ -123,7 +123,7 @@
           padding: 12px 12px;
 
           border: 2px solid #F7D2BF;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 500;
 
           background-color: #D8D8DE;
