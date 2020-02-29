@@ -1,7 +1,7 @@
 <template>
-  <section 
-    class="container" 
-    style="height: 2000px;">
+  <section
+    class="z-index"
+  >
     <!-- <nuxt-link to="/posts">
       <h1>
         POSTS
@@ -21,8 +21,8 @@
     </ul> -->
 
     <!-- FIXME: FOR TEST PURPOSE -->
-    <!-- <z--menu /> -->
-    <z-hero />
+    <!-- <z-menu /> -->
+    <z-hero-grid />
   </section>
 </template>
 
@@ -31,7 +31,7 @@
 import AppLogo from '~/components/AppLogo.vue';
 import ZNavbar from '~/components/ZNavbar.vue';
 import ZMenu from '~/components/ZMenu.vue';
-import ZHero from '~/components/ZHero.vue';
+import ZHeroGrid from '~/components/ZHeroGrid.vue';
 import ZFooter from '~/components/ZFooter.vue';
 
 export default {
@@ -39,7 +39,7 @@ export default {
     AppLogo,
     ZNavbar,
     ZMenu,
-    ZHero,
+    ZHeroGrid,
     ZFooter,
   },
 };
