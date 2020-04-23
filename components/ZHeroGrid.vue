@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="z-hero-grid__bg">
-      <div class="content" />
+      copyright - ilaria urbinati
     </div>
   </div>
 </template>
@@ -38,24 +38,20 @@
     background-color: #372E59;
     color: #D8D8DE;
 
-    /*@media DESKTOP */
-    /*
-    grid-template-columns: [first-col] 1fr [col-2] 1fr [end-col];
-    grid-template-rows: [first-row] 1fr [end-row];
+    @screen lg {
 
-    grid-template-areas:
-      "cta-content bg";
-    */
-    /* could work: */
-    /* background-color: #F9D4C1; */
-    /*@media DESK */
-    /* TRANSPARENCY GRADIENT */
-    /*
-    background-image: -webkit-gradient(
-      linear, left top, left bottom, from(rgba(246,204,182,1)),
-      to(rgba(246,204,182,0.7))
-    );
-    */
+      display: grid;
+      grid-template-columns: [first-col] 1fr [col-2] 1fr [end-col];
+      grid-template-rows: [first-row] 1fr [end-row];
+
+      gap: 0 0;
+      grid-template-areas:
+        "bg"
+        "cta-content";
+
+      max-height: 812px;
+
+    }
 
     &__cta-content {
 
@@ -72,17 +68,22 @@
 
       z-index: 10;
 
-      /*@media DESKTOP*/
-      /*grid-area: cta-content;
-      grid-column-start: first-col;
-      grid-column-end: end-col;
+      @screen lg {
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        grid-area: cta-content;
+        grid-column-start: first-col;
+        grid-column-end: col-2;
 
-      z-index: 10;
-      */
+        grid-row-start: first-row;
+        grid-row-end: end-row;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        z-index: 10;
+
+      }
 
       &__card {
 
@@ -91,14 +92,14 @@
 
         margin-bottom: 8px;
 
-        /*@media DESK*/
-        /*
-        height: 300px;
-        width: 460px;
+        @screen lg {
 
-        margin-bottom: 150px;
-        padding: 16px;
-        */
+          height: 300px;
+          width: 460px;
+
+          margin: 10% auto;
+
+        }
 
         &__description {
 
@@ -107,12 +108,14 @@
           font-weight: 600;
           padding: 16px 20px;
 
-          /*@media DESK*/
-          /*
-          line-height: 1.25;
-          font-size: 42px;
-          font-weight: 600;
-          */
+          @screen lg {
+
+            padding: 16px 0;
+            line-height: 1.25;
+            font-size: 42px;
+            font-weight: 600;
+
+          }
 
         }
 
@@ -131,23 +134,22 @@
 
           transition: 0.5s;
 
-          /*@media DESK*/
-          /*
-          width: 320px;
+          @screen lg {
 
-          margin: 16px 0;
-          padding: 12px 28px;
-          border: 2px solid black;
-          */
+            width: 320px;
 
-          /*@media DESK */
-          /* &:hover {
+            margin: 16px 0;
+            padding: 12px 28px;
+            border: 2px solid black;
 
-            color: #d8d8de;
-            border-color: #372e59;
-            background-color: #372e59;
+          }
 
-          } */
+          &:hover {
+
+            border-color: #d8d8de;
+            background-color: #F7D2BF;
+
+          }
 
         }
 
@@ -173,120 +175,26 @@
       background-size: cover;
       background-position: bottom;
 
-      /*@media DESKTOP*/
-      /*
       display: flex;
-      justify-content: center;
-      align-items: center;
-      */
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-size: 12px;
+      padding: 4px 8px;
 
-      /*@media DESK */
-      /*
-      background: url("https://ilariaurbinati.com/media/cache/33/08/330887c336a6755bc7a3eef3fb523505/urbinati-risposta-cuore-85bis.jpg") no-repeat center center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      */
+      @screen lg {
+
+        grid-column-start: col-2;
+        grid-column-end: end-col;
+
+        grid-row-start: first-row;
+        grid-row-end: row-3;
+
+        max-width: 512px;
+
+      }
 
     }
 
   }
-  /* .z-hero {
-    width: 100vw;
-    height: calc(100vh - 80px);
 
-    position: relative;
-
-    &__overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      filter: blur(8px);
-
-      width: 100%;
-      height: 100%;
-
-      background: lightgray;
-      opacity: 0.1;
-      z-index: -1;
-    }
-
-    &__background {
-      width: 100%;
-      height: 100%;
-
-      background: #f6cfba;
-
-      // FIXME: if not needed, remove.
-      // fallback for old browsers
-      // background: #DEF3FD;
-      // Chrome 10-25, Safari 5.1-6
-      // background: -webkit-linear-gradient(to bottom left, #defde0 0%, #def3fd 100%);
-      // W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
-      // background: linear-gradient(to bottom left, #defde0 0%, #def3fd 100%);
-
-      z-index: -2;
-
-      &__image {
-        float: right;
-
-        width: 50%;
-        height: 100%;
-        background: no-repeat center url("https://ilariaurbinati.com/media/cache/33/08/330887c336a6755bc7a3eef3fb523505/urbinati-risposta-cuore-85bis.jpg");
-      }
-    }
-
-    &__cta {
-      &__container-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 100%;
-      }
-
-      &__container {
-        height: 100%;
-        width: 75%;
-
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-
-        margin: 0 auto;
-      }
-
-      &__card {
-        // height: 300px;
-        width: 460px;
-
-        margin-bottom: 150px;
-        padding: 16px;
-
-        &__description {
-          line-height: 1.25;
-          font-size: 42px;
-          font-weight: 600;
-        }
-
-        &__btn {
-          width: 320px;
-
-          margin: 16px 0;
-          padding: 12px 28px;
-          border: 2px solid black;
-
-          transition: 0.5s;
-
-          &:hover {
-            color: #d8d8de;
-            border-color: #372e59;
-            background-color: #372e59;
-          }
-        }
-      }
-    }
-  } */
 </style>
