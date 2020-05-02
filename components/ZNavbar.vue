@@ -11,7 +11,7 @@
           </h1>
         </nuxt-link>
       </div>
-      <z-hamburger-icon @toggleMenu="$emit('toggleMenu')" />
+      <z-hamburger-icon />
     </div>
   </div>
 </template>
@@ -79,13 +79,6 @@ import ZHamburgerIcon from "~/components/ZHamburgerIcon.vue";
     );
   }
 
-  /* &__menu,
-    &__search {
-
-      @apply flex self-center justify-center w-16 px-2;
-
-    } */
-
   &__main {
     @apply flex justify-between w-full relative;
 
@@ -94,6 +87,7 @@ import ZHamburgerIcon from "~/components/ZHamburgerIcon.vue";
     }
 
     &--title {
+
       @apply flex self-center flex-col px-2;
 
       @screen lg {
