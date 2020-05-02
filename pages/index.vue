@@ -19,9 +19,6 @@
         {{ post }}
       </li>
     </ul> -->
-
-    <!-- FIXME: FOR TEST PURPOSE -->
-    <!-- <z-menu /> -->
     <z-hero-grid />
   </section>
 </template>
