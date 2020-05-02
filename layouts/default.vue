@@ -1,9 +1,9 @@
 <template>
   <div class="z-layout">
-    <z-menu 
-      v-show="menuIsOpen" 
-      @toggleMenu="menuIsOpen = !menuIsOpen" />
-    <z-navbar @toggleMenu="menuIsOpen = !menuIsOpen" />
+    <z-menu
+      v-show="$store.state.menu.menuVisibility"
+    />
+    <z-navbar />
 
     <div class="z-layout__content">
       <!-- FIXME find a better solution for .spacer -->
@@ -33,11 +33,6 @@ export default {
     ZFooter,
     AppLogo,
   },
-  data() {
-    return {
-      menuIsOpen: false,
-    };
-  }
 };
 </script>
 <style lang="scss">
