@@ -1,8 +1,8 @@
 <template>
   <div class="z-hamburger-icon__container">
-    <div 
-      id="nav-icon" 
-      :class="isMenuOpen ? 'open' : null" 
+    <div
+      id="nav-icon"
+      :class="$store.state.menu.menuVisibility ? 'open' : null"
       @click="handleMenu"
     >
       <span />
@@ -16,17 +16,23 @@
 <script>
 export default {
   data() {
-            return {
-      isMenuOpen: false
+
+    return {
+
+      isMenuOpen: this.$store.state.menu.menuVisibility,
+
     };
+
   },
   methods: {
-            handleMenu() {
+    handleMenu() {
 
-                this.isMenuOpen = ! this.isMenuOpen;
+      this.$store.commit(
+          'menu/SET_MENU_VISIBILITY',
+          ! this.$store.state.menu.menuVisibility,
+      );
 
-      this.$emit("toggleMenu");
-            },
+    },
   }
 };
 </script>
