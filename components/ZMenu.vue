@@ -1,9 +1,7 @@
 <template>
   <div class="z-menu">
-    <!-- todo: build two separate component for hamburger and "x" closing icon s -->
     <z-hamburger-icon
       style="position: fixed; top: 0; right: 0;"
-      @toggleMenu="$emit('toggleMenu')"
     />
     <ul class="z-menu__content">
       <li
