@@ -1,11 +1,11 @@
 <template>
-  <div class="z-menu">
+  <div class="z-menu"> <!-- FIXME: add BEM modifier to change the BG color-->
     <z-hamburger-icon
       style="position: fixed; top: 0; right: 0;"
     />
     <ul class="z-menu__content">
       <li
-        v-for="(item, index) in firstLeveMenuItems"
+        v-for="(item, index) in defaultItems"
         :key="index"
         class="z-menu__content__item"
       >
@@ -27,22 +27,42 @@ export default {
   components: {
     ZHamburgerIcon,
   },
-
   data() {
     return {
-      firstLeveMenuItems: [
-        "COSA FACCIO",
+      currentItems: [
+        'COSA FACCIO',
         'COME LAVORO',
-        "ANALISI TRANSAZIONALE",
-        "LA PSICOTERAPIA",
-        "IL MIO STUDIO"
+        'ANALISI TRANSAZIONALE',
+        'LA PSICOTERAPIA',
+        'IL MIO STUDIO'
+      ],
+      defaultItems: [
+        'COSA FACCIO',
+        'COME LAVORO',
+        'ANALISI TRANSAZIONALE',
+        'LA PSICOTERAPIA',
+        'IL MIO STUDIO'
+      ],
+      servicesItems: [
+        'CONSULENZA PSICOLOGICA',
+        'SOSTEGNO PSICOLOGICO',
+        'PSICOTERAPIA',
+        'VALUTAZIONE PSICODIAGNOSTICA',
+        'TEST PSICOLOGICI',
+        'EMDR',
+        'VALUTAZIONE DSA IN ETA\' EVOLUTIVA',
       ],
     };
-        },
+  },
+  methods: {
+    testLog(args) {
+      console.log({args});
+    },
+  },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .z-menu {
   position: fixed;
   display: flex;
@@ -56,21 +76,24 @@ export default {
   text-align: center;
 
   &__content {
-    /*
-      padding: 8px 16px;
-      margin: 4px 0;
-      background-color: rgba(255, 231, 163,0.75);
-      */
+
+    padding: 8px 16px;
+    margin: 4px 0;
+    // background-color: rgba(255, 231, 163,0.75);
 
     &__item {
-      font-weight: 800;
 
-      /*
-        margin: 4px 0;
-        padding: 8px 16px;
-        background-color: rgba(255, 231, 163,0.75);
-        */
+      margin: 4px 0;
+      padding: 8px 16px;
+
+      color: #372e59;
+      font-weight: 800;
+      border-bottom: 1px solid #372e59;
+      // background-color: rgba(255, 231, 163,0.75);
+
     }
+
   }
+
 }
 </style>
