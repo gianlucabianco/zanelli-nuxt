@@ -11,7 +11,6 @@
       >
         <a
           class="z-menu__content__item__anchor"
-          style="color: black; font-size: 26px; z-index: 90;"
         >
           {{ item }}
         </a>
@@ -30,18 +29,24 @@ export default {
   data() {
     return {
       currentItems: [
-        'COSA FACCIO',
+        'CHI SONO',
+        'SERVIZI OFFERTI',
         'COME LAVORO',
-        'ANALISI TRANSAZIONALE',
+        'L\'ANALISI TRANSAZIONALE',
         'LA PSICOTERAPIA',
-        'IL MIO STUDIO'
+        'IL MIO STUDIO',
+        'CONTATTI',
+        'BLOG'
       ],
       defaultItems: [
-        'COSA FACCIO',
+        'CHI SONO',
+        'SERVIZI OFFERTI',
         'COME LAVORO',
-        'ANALISI TRANSAZIONALE',
+        'L\'ANALISI TRANSAZIONALE',
         'LA PSICOTERAPIA',
-        'IL MIO STUDIO'
+        'IL MIO STUDIO',
+        'CONTATTI',
+        'BLOG'
       ],
       servicesItems: [
         'CONSULENZA PSICOLOGICA',
@@ -70,26 +75,47 @@ export default {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #e2e8f0;
-  z-index: 80;
-  overflow: hidden;
   text-align: center;
+  background-color: #e2e8f0;
+  overflow: hidden;
+  z-index: 80;
 
   &__content {
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    max-height: 650px;
+
     padding: 8px 16px;
     margin: 4px 0;
-    // background-color: rgba(255, 231, 163,0.75);
 
     &__item {
+
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       margin: 4px 0;
       padding: 8px 16px;
 
       color: #372e59;
       font-weight: 800;
-      border-bottom: 1px solid #372e59;
-      // background-color: rgba(255, 231, 163,0.75);
+      border-bottom: 1px solid #382580;
+
+      &:last-child {
+
+        border: none;
+
+      }
+
+      &__anchor {
+
+        font-size: 26px;
+
+      }
 
     }
 
