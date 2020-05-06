@@ -1,18 +1,23 @@
 <template>
-  <div class="z-menu"> <!-- FIXME: add BEM modifier to change the BG color-->
+  <div
+    class="z-menu"
+    :class="backgroundClasses"
+  >
     <!-- TODO: THE WRAPPER SHOULD NOT EXIST. REPLACE TWO SEPARATE COMPONENT
     style="position: fixed; top: 0; right: 0;"
     X for default level, go back for levels above -->
     <div
       class="z-menu__btns-wrapper"
     >
-      <!-- FIXME: BL for back btn -->
       <div
         class="z-menu__go-back"
+        @click="goBack"
       >
         &#60;
       </div>
-      <z-hamburger-icon />
+      <z-hamburger-icon
+        @click.native="resetMenu"
+      />
     </div>
     <ul class="z-menu__content">
       <!-- FIXME: for approachItems max-height: 400px -->
@@ -22,9 +27,18 @@
         class="z-menu__content__item"
       >
         <a
+          v-if="item.hasLink"
           class="z-menu__content__item__anchor"
+          @click="testLog('go to link! + FIXME: resetMenu + FIXME: $store.CLOSE_MENU')"
         >
-          {{ item }}
+          {{ item.text }}
+        </a>
+        <a
+          v-else
+          class="z-menu__content__item__anchor"
+          @click="changeMenuLayer(item.goTo, item.parentMenu)"
+        >
+          {{ item.text }}
         </a>
       </li>
     </ul>
@@ -41,62 +55,229 @@ export default {
   data() {
     return {
       currentItems: [
-        'CHI SONO',
-        'SERVIZI OFFERTI',
-        'COME LAVORO',
-        'L\'ANALISI TRANSAZIONALE',
-        'LA PSICOTERAPIA',
-        'IL MIO STUDIO',
-        'CONTATTI',
-        'BLOG'
+        {
+          hasLink: true,
+          text: 'CHI SONO',
+        },
+        {
+          hasLink: false,
+          text: 'SERVIZI OFFERTI',
+          goTo: 'servicesItems',
+        },
+        {
+          hasLink: false,
+          text: 'COME LAVORO',
+          goTo: 'approachItems',
+        },
+        {
+          hasLink: false,
+          text: 'L\'ANALISI TRANSAZIONALE',
+          goTo: 'transactionalAnalysisItems',
+        },
+        {
+          hasLink: false,
+          text: 'LA PSICOTERAPIA',
+          goTo: 'therapyItems',
+        },
+        {
+          hasLink: true,
+          text: 'IL MIO STUDIO',
+        },
+        {
+          hasLink: true,
+          text: 'CONTATTI',
+        },
+        {
+          hasLink: true,
+          text: 'BLOG',
+        },
       ],
       defaultItems: [
-        'CHI SONO',
-        'SERVIZI OFFERTI',
-        'COME LAVORO',
-        'L\'ANALISI TRANSAZIONALE',
-        'LA PSICOTERAPIA',
-        'IL MIO STUDIO',
-        'CONTATTI',
-        'BLOG'
+        {
+          hasLink: true,
+          text: 'CHI SONO',
+        },
+        {
+          hasLink: false,
+          text: 'SERVIZI OFFERTI',
+          goTo: 'servicesItems',
+        },
+        {
+          hasLink: false,
+          text: 'COME LAVORO',
+          goTo: 'approachItems',
+        },
+        {
+          hasLink: false,
+          text: 'L\'ANALISI TRANSAZIONALE',
+          goTo: 'transactionalAnalysisItems',
+        },
+        {
+          hasLink: false,
+          text: 'LA PSICOTERAPIA',
+          goTo: 'therapyItems',
+        },
+        {
+          hasLink: true,
+          text: 'IL MIO STUDIO',
+        },
+        {
+          hasLink: true,
+          text: 'CONTATTI',
+        },
+        {
+          hasLink: true,
+          text: 'BLOG',
+        },
       ],
       servicesItems: [
-        'CONSULENZA E SOSTEGNO PSICOLOGICO',
-        'PSICOTERAPIA INDIVIDUALE',
-        'EMDR',
-        'VALUTAZIONE PSICODIAGNOSTICA',
-        'VALUTAZIONE DSA IN ETA\' EVOLUTIVA',
+        {
+          hasLink: true,
+          text: 'CONSULENZA E SOSTEGNO PSICOLOGICO',
+        },
+        {
+          hasLink: true,
+          text: 'PSICOTERAPIA INDIVIDUALE',
+        },
+        {
+          hasLink: true,
+          text: 'EMDR',
+        },
+        {
+          hasLink: true,
+          text: 'VALUTAZIONE PSICODIAGNOSTICA',
+        },
+        {
+          hasLink: true,
+          text: 'VALUTAZIONE DSA IN ETA\' EVOLUTIVA',
+        },
       ],
       approachItems: [
-        'IL MIO APPROCCIO',
-        'I MIEI VALORI'
+        {
+          hasLink: true,
+          text: 'IL MIO APPROCCIO',
+        },
+        {
+          hasLink: true,
+          text: 'I MIEI VALORI',
+        },
       ],
       transactionalAnalysisItems: [
-        'CHE COS\'E\' L\'ANALISI TRANSAZIONALE',
-        'IL MODELLO DEGLI STATI DELL\'IO',
-        'LA COMUNICAZIONE IN AT',
-        'LE CAREZZE',
-        'LE SVALUTAZIONI',
-        'IL COPIONE',
-        'EMOZIONI AUTENTICHE E PARASSITE',
-        'I GIOCHI PSICOLOGICI'
+        {
+          hasLink: true,
+          text: 'CHE COS\'E\' L\'ANALISI TRANSAZIONALE',
+        },
+        {
+          hasLink: true,
+          text: 'IL MODELLO DEGLI STATI DELL\'IO',
+        },
+        {
+          hasLink: true,
+          text: 'LA COMUNICAZIONE IN AT',
+        },
+        {
+          hasLink: true,
+          text: 'LE CAREZZE',
+        },
+        {
+          hasLink: true,
+          text: 'LE SVALUTAZIONI',
+        },
+        {
+          hasLink: false,
+          text: 'IL COPIONE',
+          goTo: 'atScriptItems',
+          parentMenu: 'transactionalAnalysisItems',
+        },
+        {
+          hasLink: true,
+          text: 'EMOZIONI AUTENTICHE E PARASSITE',
+        },
+        {
+          hasLink: true,
+          text: 'I GIOCHI PSICOLOGICI',
+        },
       ],
       therapyItems: [
-        'CHE COS\'E\' LA PSICOTERAPIA',
-        'COME OTTENERE IL MASSIMO DALLA PSICOTERAPIA',
-        'PERCHE\' LA PSICOTERAPIA FUNZIONA',
-        'COME SCEGLIERE IL TERAPEUTA GIUSTO'
+        {
+          hasLink: true,
+          text: 'CHE COS\'E\' LA PSICOTERAPIA',
+        },
+        {
+          hasLink: true,
+          text: 'COME OTTENERE IL MASSIMO DALLA PSICOTERAPIA',
+        },
+        {
+          hasLink: true,
+          text: 'PERCHE\' LA PSICOTERAPIA FUNZIONA',
+        },
+        {
+          hasLink: true,
+          text: 'COME SCEGLIERE IL TERAPEUTA GIUSTO',
+        },
       ],
       atScriptItems: [
-        'IL COPIONE IN ETA\' ADULTA',
-        'I MESSAGGI GENITORIALI:\nLE INGIUNZIONI',
-        'I MESSAGGI GENITORIALI:\nLE SPINTE'
+        {
+          hasLink: true,
+          text: 'IL COPIONE IN ETA\' ADULTA',
+        },
+        {
+          hasLink: true,
+          text: 'I MESSAGGI GENITORIALI:\nLE INGIUNZIONI',
+        },
+        {
+          hasLink: true,
+          text: 'I MESSAGGI GENITORIALI:\nLE SPINTE',
+        },
       ],
+      menuLevel: 0,
+      parentMenu: 'defaultItems',
     };
+  },
+  computed: {
+    backgroundClasses() {
+
+      return {
+          'z-menu--bg-default': this.menuLevel === 0,
+          'z-menu--bg-first': this.menuLevel === 1,
+          'z-menu--bg-second': this.menuLevel === 2,
+      };
+
+    },
   },
   methods: {
     testLog(args) {
-      console.log({args});
+      console.log(args);
+    },
+    changeMenuLayer(
+      subMenu,
+      parentMenu = this.parentMenu
+    ) {
+
+      this.currentItems = this[`${subMenu}`];
+
+      this.parentMenu = parentMenu;
+
+      this.menuLevel++;
+
+    },
+    goBack() {
+
+      this.currentItems = this[this.parentMenu];
+
+      this.parentMenu = 'defaultItems';
+
+      this.menuLevel--;
+
+    },
+    resetMenu() {
+
+      this.currentItems = this.defaultItems;
+
+      this.parentMenu = 'defaultItems';
+
+      this.menuLevel = 0;
+
     },
   },
 };
@@ -111,9 +292,26 @@ export default {
   width: 100vw;
   height: 100vh;
   text-align: center;
-  background-color: #e2e8f0;
   overflow: hidden;
   z-index: 80;
+
+  &--bg-default {
+
+    background-color: #e2e8f0;
+
+  }
+
+  &--bg-first {
+
+    background-color: red;
+
+  }
+
+  &--bg-second {
+
+    background-color: yellow;
+
+  }
 
   &__btns-wrapper {
 
@@ -167,6 +365,12 @@ export default {
       color: #372e59;
       font-weight: 800;
       border-bottom: 1px solid #382580;
+
+      &:first-child {
+
+        z-index: 100;
+
+      }
 
       &:last-child {
 
