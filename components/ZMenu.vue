@@ -15,8 +15,9 @@
       <z-hamburger-icon />
     </div>
     <ul class="z-menu__content">
+      <!-- FIXME: for approachItems max-height: 400px -->
       <li
-        v-for="(item, index) in defaultItems"
+        v-for="(item, index) in currentItems"
         :key="index"
         class="z-menu__content__item"
       >
@@ -60,13 +61,36 @@ export default {
         'BLOG'
       ],
       servicesItems: [
-        'CONSULENZA PSICOLOGICA',
-        'SOSTEGNO PSICOLOGICO',
-        'PSICOTERAPIA',
-        'VALUTAZIONE PSICODIAGNOSTICA',
-        'TEST PSICOLOGICI',
+        'CONSULENZA E SOSTEGNO PSICOLOGICO',
+        'PSICOTERAPIA INDIVIDUALE',
         'EMDR',
+        'VALUTAZIONE PSICODIAGNOSTICA',
         'VALUTAZIONE DSA IN ETA\' EVOLUTIVA',
+      ],
+      approachItems: [
+        'IL MIO APPROCCIO',
+        'I MIEI VALORI'
+      ],
+      transactionalAnalysisItems: [
+        'CHE COS\'E\' L\'ANALISI TRANSAZIONALE',
+        'IL MODELLO DEGLI STATI DELL\'IO',
+        'LA COMUNICAZIONE IN AT',
+        'LE CAREZZE',
+        'LE SVALUTAZIONI',
+        'IL COPIONE',
+        'EMOZIONI AUTENTICHE E PARASSITE',
+        'I GIOCHI PSICOLOGICI'
+      ],
+      therapyItems: [
+        'CHE COS\'E\' LA PSICOTERAPIA',
+        'COME OTTENERE IL MASSIMO DALLA PSICOTERAPIA',
+        'PERCHE\' LA PSICOTERAPIA FUNZIONA',
+        'COME SCEGLIERE IL TERAPEUTA GIUSTO'
+      ],
+      atScriptItems: [
+        'IL COPIONE IN ETA\' ADULTA',
+        'I MESSAGGI GENITORIALI:\nLE INGIUNZIONI',
+        'I MESSAGGI GENITORIALI:\nLE SPINTE'
       ],
     };
   },
@@ -124,7 +148,8 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
-    max-height: 650px;
+    // TODO: BEM modifiers for short sub-menus
+    // max-height: 800px;
 
     padding: 8px 16px;
     margin: 4px 0;
@@ -151,7 +176,13 @@ export default {
 
       &__anchor {
 
-        font-size: 26px;
+        font-size: 20px;
+
+        @screen lg {
+
+          font-size: 26px;
+
+        }
 
       }
 
