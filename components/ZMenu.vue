@@ -1,8 +1,16 @@
 <template>
   <div class="z-menu"> <!-- FIXME: add BEM modifier to change the BG color-->
-    <z-hamburger-icon
-      style="position: fixed; top: 0; right: 0;"
-    />
+    <div
+      class="z-menu__btns-wrapper"
+    >
+      <!-- FIXME: BL for back btn -->
+      <div
+        class="z-menu__go-back"
+      >
+        &#60;
+      </div>
+      <z-hamburger-icon />
+    </div>
     <ul class="z-menu__content">
       <li
         v-for="(item, index) in defaultItems"
@@ -79,6 +87,33 @@ export default {
   background-color: #e2e8f0;
   overflow: hidden;
   z-index: 80;
+
+  &__btns-wrapper {
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    @screen lg {
+
+      @apply w-3/4 mx-auto;
+
+    }
+
+  }
+
+  &__go-back {
+
+    padding: 8px 16px;
+
+    font-size: 40px;
+    color: #d8d8de;
+
+  }
 
   &__content {
 
