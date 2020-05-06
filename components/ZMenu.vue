@@ -1,5 +1,8 @@
 <template>
   <div class="z-menu"> <!-- FIXME: add BEM modifier to change the BG color-->
+    <!-- TODO: THE WRAPPER SHOULD NOT EXIST. REPLACE TWO SEPARATE COMPONENT
+    style="position: fixed; top: 0; right: 0;"
+    X for default level, go back for levels above -->
     <div
       class="z-menu__btns-wrapper"
     >
