@@ -3,19 +3,20 @@
     class="z-menu"
     :class="backgroundClasses"
   >
-    <!-- TODO: THE WRAPPER SHOULD NOT EXIST. REPLACE TWO SEPARATE COMPONENT
-    style="position: fixed; top: 0; right: 0;"
-    X for default level, go back for levels above -->
     <div
       class="z-menu__btns-wrapper"
     >
       <div
-        class="z-menu__go-back"
+        v-if="menuLevel !== 0"
+        class="z-menu__btns-wrapper__icon z-menu__btns-wrapper__icon--go-back"
+        :class="menuLevel === 2 ? 'z-menu__btns-wrapper__icon--go-back--second-level' : null"
         @click="goBack"
       >
         &#60;
       </div>
       <z-hamburger-icon
+        v-else
+        class="z-menu__btns-wrapper__icon"
         @click.native="resetMenu"
       />
     </div>
@@ -330,7 +331,7 @@ export default {
     top: 0;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 
     width: 100%;
 
@@ -340,14 +341,24 @@ export default {
 
     }
 
-  }
+    &__icon {
 
-  &__go-back {
+      &--go-back {
 
-    padding: 8px 16px;
+        padding: 0 16px 8px 16px;
 
-    font-size: 40px;
-    color: #d8d8de;
+        font-size: 40px;
+        color: #d8d8de;
+
+        &--second-level {
+
+          color: #261c46;
+
+        }
+
+      }
+
+    }
 
   }
 
@@ -360,9 +371,7 @@ export default {
     // TODO: BEM modifiers for short sub-menus
     // max-height: 800px;
 
-    //FIXME: ORIGINAL SPACING
-    // padding: 8px 16px;
-    padding: 56px 16px 32px 16px;
+    padding: 64px 16px 32px 16px;
     margin: 4px 0;
 
     &__item {
