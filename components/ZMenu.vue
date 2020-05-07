@@ -25,6 +25,7 @@
         v-for="(item, index) in currentItems"
         :key="index"
         class="z-menu__content__item"
+        :class="itemClasses"
       >
         <a
           v-if="item.hasLink"
@@ -244,6 +245,15 @@ export default {
       };
 
     },
+    itemClasses() {
+
+      return {
+          'z-menu__content__item--color-default': this.menuLevel === 0,
+          'z-menu__content__item--color-first': this.menuLevel === 1,
+          'z-menu__content__item--color-second': this.menuLevel === 2,
+      };
+
+    },
   },
   methods: {
     testLog(args) {
@@ -294,6 +304,7 @@ export default {
   text-align: center;
   overflow: hidden;
   z-index: 80;
+  transition: 0.66s ease-out;
 
   &--bg-default {
 
@@ -303,13 +314,13 @@ export default {
 
   &--bg-first {
 
-    background-color: red;
+    background-color: #372E59;
 
   }
 
   &--bg-second {
 
-    background-color: yellow;
+    background-color: #F7D2BF;
 
   }
 
@@ -362,9 +373,7 @@ export default {
       margin: 4px 0;
       padding: 8px 16px;
 
-      color: #372e59;
       font-weight: 800;
-      border-bottom: 1px solid #382580;
 
       &:first-child {
 
@@ -387,6 +396,27 @@ export default {
           font-size: 26px;
 
         }
+
+      }
+
+      &--color-default {
+
+        color: #372e59;
+        border-bottom: 1px solid #382580;
+
+      }
+
+      &--color-first {
+
+        color: #d8d8de;
+        border-bottom: 1px solid #d8d8de;
+
+      }
+
+      &--color-second {
+
+        color: #372e59;
+        border-bottom: 1px solid #382580;
 
       }
 
