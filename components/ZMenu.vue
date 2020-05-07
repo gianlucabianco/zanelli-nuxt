@@ -360,7 +360,9 @@ export default {
     // TODO: BEM modifiers for short sub-menus
     // max-height: 800px;
 
-    padding: 8px 16px;
+    //FIXME: ORIGINAL SPACING
+    // padding: 8px 16px;
+    padding: 56px 16px 32px 16px;
     margin: 4px 0;
 
     &__item {
