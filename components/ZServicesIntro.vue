@@ -26,9 +26,6 @@
     width: 100%;
     height: 100%;
 
-    padding: 44px 0;
-    /* padding: 64px 0; */
-
     background-color: #D8D8DE;
     font-size: 22px;
     line-height: 1.8;
@@ -41,8 +38,6 @@
       height: 100%;
 
       padding: 0 20px;
-
-      /* background-color: red; */
 
       @screen lg {
 
@@ -77,6 +72,8 @@
 
         width: 100%;
         height: 100%;
+
+        padding: 44px 0;
 
         @screen xl {
 
