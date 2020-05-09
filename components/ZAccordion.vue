@@ -6,11 +6,12 @@
     <div
       class="z-accordion__header"
     >
-      <h3>{{ title }}</h3>
+      <h3 class="z-accordion__header__title">{{ title }}</h3>
       <a
         @click.prevent="updateModel( ! model )"
         class="z-accordion__header__icon"
       >
+        <!-- TODO: FIXME: REPLACE + / - WITH ARROW DOWN / UP -->
         {{ ! model ? '+' : '-' }}
       </a>
     </div>
@@ -19,8 +20,9 @@
     >
       <div
         v-if="model"
-        class="z-accordion__header__content"
+        class="z-accordion__content"
       >
+        <!-- TODO: / FIXME: add default slot -->
         {{ content }}
       </div>
     </transition>
@@ -89,28 +91,40 @@ export default {
 >
   .z-accordion {
 
-    background-color: red;
-    transition: 1s ease-out;
-
-    &--expanded {
-      background-color: yellow;
-
-    }
+    padding: 16px 0;
+    border-bottom: 1px solid #372E59;
+    transition: 0.66s ease-in;
+    color: #372E59;
 
     &__header {
 
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 16px 0;
 
       height: 80px;
+      line-height: 1.3;
 
-      &__icon {
+      &__title {
 
-        font-size: 30px;
+        font-size: 26px;
         font-weight: 800;
 
       }
+
+      &__icon {
+
+        padding: 0 8px;
+        font-size: 30px;
+
+      }
+
+    }
+
+    &__content {
+
+      padding: 8px 0 16px 0;
 
     }
 
@@ -118,21 +132,12 @@ export default {
     .fade-leave-to {
 
       opacity: 0;
-      height: 0;
 
     }
 
     .fade-enter-active {
 
-      transition: opacity 2s ease-in;
-      transition: height 1.3s ease-in;
-
-    }
-
-    .fade-leave-active {
-
-      transition: opacity 0.66s ease-out;
-      transition: height 1.3s ease-out;
+      transition: opacity 0.66s ease-in;
 
     }
 
