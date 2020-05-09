@@ -38,7 +38,7 @@
         <a
           v-else
           class="z-menu__content__item__anchor"
-          @click="changeMenuLayer(item.goTo, item.parentMenu)"
+          @click.prevent="changeMenuLayer(item.goTo, item.parentMenu)"
         >
           {{ item.text }}
         </a>
