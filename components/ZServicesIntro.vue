@@ -73,7 +73,7 @@
         width: 100%;
         height: 100%;
 
-        padding: 44px 0;
+        padding: 44px 0 22px 0;
 
         @screen xl {
 
