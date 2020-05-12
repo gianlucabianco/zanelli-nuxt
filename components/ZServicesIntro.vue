@@ -8,7 +8,6 @@
         <p class="z-hero-services__content__description__item--center">
           Mi occupo di adulti che stanno attraversando momenti di difficoltà personale e relazionale, tali da comportare sofferenza e di coloro che hanno l'interesse a conoscersi meglio per intraprendere un precorso di consapevolezza e cambiamento.
         </p>
-        <h2 class="z-hero-services__content__description__item--title">SERVIZI OFFERTI</h2>
       </div>
       <div class="z-hero-services__content__img-or-quote">
         "Quote or image here"
@@ -56,6 +55,7 @@
           align-items: center;
 
           width: 512px;
+          margin-right: -37px;
 
           background-color: lightcoral;
 
@@ -73,7 +73,7 @@
         width: 100%;
         height: 100%;
 
-        padding: 44px 0 22px 0;
+        padding: 44px 0;
 
         @screen xl {
 
@@ -87,14 +87,7 @@
           &--center {
 
             max-width: 880px;
-            padding: 32px 0;
-
-          }
-
-          &--title {
-
-            font-size: 26px;
-            font-weight: 800;
+            padding-top: 32px;
 
           }
 
