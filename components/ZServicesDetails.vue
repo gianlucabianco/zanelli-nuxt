@@ -1,5 +1,6 @@
 <template>
   <div class="z-services-details">
+    <h2 class="z-services-details__title">SERVIZI OFFERTI</h2>
     <!-- TODO: / FIXME: v-for + data obj -->
     <z-accordion
       title="Consulenza e sostegno psicologico"
@@ -47,6 +48,13 @@ export default {
 
     font-size: 22px;
     line-height: 1.8;
+
+    &__title {
+
+      font-size: 26px;
+      font-weight: 800;
+
+    }
 
   }
 
