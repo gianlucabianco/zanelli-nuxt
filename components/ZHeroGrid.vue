@@ -167,7 +167,7 @@
       grid-row-start: first-row;
       grid-row-end: row-2;
 
-      background: url("https://ilariaurbinati.com/media/cache/33/08/330887c336a6755bc7a3eef3fb523505/urbinati-risposta-cuore-85bis.jpg") no-repeat center center;
+      background: url("/hero.jpg") no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
