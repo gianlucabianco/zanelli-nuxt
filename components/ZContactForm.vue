@@ -1,6 +1,6 @@
 <template>
-  <div 
-    id="contact-form" 
+  <div
+    id="contact-form"
     class="z-contact-form">
     <form class="z-contact-form__module">
       <div class="z-contact-form__module--description">
@@ -15,42 +15,47 @@
           oppure scrivere all'indirizzo info@francescazanelli.it
         </p>
         <p>
-          E' possibile inviare una mail utilizzando direttamente il form
-          seguente.
+          E' possibile inviare una mail utilizzando direttamente il seguente form.
         </p>
       </div>
       <div class="z-contact-form__module__form-group">
-        <input
-          v-model="name"
-          placeholder="Nome e Congome"
-          type="text"
-          name="name"
-          class="z-contact-form__module__form-group--input"
-        >
+        <Label>Nome e cognome
+          <input
+            v-model="name"
+            placeholder="Nome e Congome"
+            type="text"
+            name="name"
+            class="z-contact-form__module__form-group--input"
+          >
+        </Label>
       </div>
       <div class="z-contact-form__module__form-group">
-        <input
-          v-model="phone"
-          placeholder="Telefono"
-          type="text"
-          name="phone"
-          class="z-contact-form__module__form-group--input"
-        >
+        <Label>Telefono
+          <input
+            v-model="phone"
+            placeholder="Telefono"
+            type="text"
+            name="phone"
+            class="z-contact-form__module__form-group--input"
+          >
+        </Label>
       </div>
       <div class="z-contact-form__module__form-group">
-        <textarea
-          v-model="message"
-          placeholder="Messaggio"
-          type="text"
-          name="message"
-          rows="10"
-          cols="30"
-          class="z-contact-form__module__form-group--input"
-        />
+        <Label>Messaggio
+          <textarea
+            v-model="message"
+            placeholder="Messaggio"
+            type="text"
+            name="message"
+            rows="10"
+            cols="30"
+            class="z-contact-form__module__form-group--input"
+          />
+        </Label>
       </div>
-      <a 
-        :href="submitLink" 
-        class="z-contact-form__module--btn" 
+      <a
+        :href="submitLink"
+        class="z-contact-form__module--btn"
         target="_blank"
       >
         INVIA
@@ -127,6 +132,8 @@ export default {
       @apply w-full my-4;
 
       &--input {
+
+        margin-top: 8px;
         line-height: 32px;
         border-bottom: 3px solid darkgrey;
 
