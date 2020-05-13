@@ -13,7 +13,7 @@
 <style lang="scss" scoped>
 .z-footer {
   min-height: 80px;
-  color: #767676;
+  color: #b1b1b1;
   background-color: #1e1e1e;
 
   @apply flex items-center justify-center w-full py-4 px-4 text-xs;
