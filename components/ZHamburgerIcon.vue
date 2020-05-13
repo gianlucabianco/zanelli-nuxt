@@ -1,7 +1,7 @@
 <template>
   <div class="z-hamburger-icon__container">
     <div
-      id="nav-icon"
+      class="nav-icon"
       :class="$store.state.menu.menuVisibility ? 'open' : null"
       @click="handleMenu"
     >
@@ -49,7 +49,7 @@ export default {
   z-index: 90;
 }
 
-#nav-icon {
+.nav-icon {
   width: 32px;
   height: 24px;
   position: relative;
@@ -65,7 +65,7 @@ export default {
   cursor: pointer;
 }
 
-#nav-icon span {
+.nav-icon span {
   display: block;
   position: absolute;
   height: 2.4px;
@@ -84,40 +84,40 @@ export default {
   transition: 0.25s ease-in-out;
 }
 
-#nav-icon span:nth-child(1) {
+.nav-icon span:nth-child(1) {
   top: 0px;
 }
 
-#nav-icon span:nth-child(2),
-#nav-icon span:nth-child(3) {
+.nav-icon span:nth-child(2),
+.nav-icon span:nth-child(3) {
   top: 12px;
 }
 
-#nav-icon span:nth-child(4) {
+.nav-icon span:nth-child(4) {
   top: 24px;
 }
 
-#nav-icon.open span:nth-child(1) {
+.nav-icon.open span:nth-child(1) {
   top: 12px;
   width: 0%;
   left: 50%;
 }
 
-#nav-icon.open span:nth-child(2) {
+.nav-icon.open span:nth-child(2) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-#nav-icon.open span:nth-child(3) {
+.nav-icon.open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-#nav-icon.open span:nth-child(4) {
+.nav-icon.open span:nth-child(4) {
   top: 12px;
   width: 0%;
   left: 50%;
