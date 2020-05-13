@@ -5,15 +5,15 @@
   >
     <div
       class="z-accordion__header"
+      @click="updateModel( ! model )"
     >
       <h3 class="z-accordion__header__title">{{ title }}</h3>
-      <a
-        @click.prevent="updateModel( ! model )"
+      <span
         class="z-accordion__header__icon"
       >
         <!-- TODO: FIXME: REPLACE + / - WITH ARROW DOWN / UP -->
         {{ ! model ? '+' : '-' }}
-      </a>
+      </span>
     </div>
     <transition
       name="fade"
