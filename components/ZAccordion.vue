@@ -11,7 +11,6 @@
       <span
         class="z-accordion__header__icon"
       >
-        <!-- TODO: FIXME: REPLACE + / - WITH ARROW DOWN / UP -->
         {{ ! model ? '+' : '-' }}
       </span>
     </div>
@@ -22,8 +21,27 @@
         v-if="model"
         class="z-accordion__content"
       >
-        <!-- TODO: / FIXME: add default slot -->
-        {{ content }}
+        <!-- @slot Use this slot to place the default content -->
+        <slot
+          v-if="singleText"
+        >
+          {{ singleText }}
+        </slot>
+
+        <!-- @slot Use this slot to place the multiParagraph content -->
+        <slot
+          v-if="multiParagraph.length"
+          name="multi-paragraph"
+        >
+          <p
+            v-for="(paragraph, index) in multiParagraph"
+            :key="`${paragraph}-${index + 1}`"
+            class="z-accordion__content__paragraph"
+          >
+            {{ paragraph }}
+          </p>
+        </slot>
+
       </div>
     </transition>
   </div>
@@ -40,9 +58,13 @@ export default {
       type: String,
       required: true,
     },
-    content: {
+    singleText: {
       type: String,
-      required: true,
+      default: '',
+    },
+    multiParagraph: {
+      type: Array,
+      default: () => [],
     },
   },
   data() {
@@ -125,6 +147,12 @@ export default {
     &__content {
 
       padding: 8px 0 16px 0;
+
+      &__paragraph {
+
+        padding-bottom: 16px;
+
+      }
 
     }
 
