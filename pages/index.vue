@@ -5,7 +5,7 @@
     <z-hero-grid />
     <z-services-intro />
     <z-services-details />
-    <!-- TODO: posts -->
+    <z-landing-posts />
   </section>
 </template>
 
@@ -13,12 +13,14 @@
 import ZHeroGrid from '~/components/ZHeroGrid.vue';
 import ZServicesIntro from '~/components/ZServicesIntro.vue';
 import ZServicesDetails from '~/components/ZServicesDetails.vue';
+import ZLandingPosts from '~/components/ZLandingPosts.vue';
 
 export default {
   components: {
     ZHeroGrid,
     ZServicesIntro,
     ZServicesDetails,
+    ZLandingPosts,
   },
 };
 </script>
