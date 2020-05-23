@@ -65,7 +65,7 @@ export default {
     width: 100%;
     height: 100%;
 
-    padding: 22px 20px;
+    padding: 40px 20px;
 
     font-size: 22px;
     line-height: 1.8;
@@ -75,7 +75,8 @@ export default {
       width: 75%;
       margin: auto;
 
-      padding: 22px 16px 22px 0;
+      padding-left: 0;
+      padding-right: 16px;
 
     }
 
@@ -88,7 +89,7 @@ export default {
     &__title {
 
       width: 100%;
-      padding-bottom: 16px;
+      padding-bottom: 32px;
       font-size: 26px;
       font-weight: 800;
 
