@@ -4,7 +4,9 @@
   >
     <z-hero-grid />
     <z-services-intro />
+    <!-- TODO: / FIXME: place the right component -->
     <z-services-details />
+    <z-services-details-test />
     <z-landing-posts />
   </section>
 </template>
@@ -13,6 +15,7 @@
 import ZHeroGrid from '~/components/ZHeroGrid.vue';
 import ZServicesIntro from '~/components/ZServicesIntro.vue';
 import ZServicesDetails from '~/components/ZServicesDetails.vue';
+import ZServicesDetailsTest from '~/components/ZServicesDetailsTest.vue';
 import ZLandingPosts from '~/components/ZLandingPosts.vue';
 
 export default {
@@ -20,6 +23,7 @@ export default {
     ZHeroGrid,
     ZServicesIntro,
     ZServicesDetails,
+    ZServicesDetailsTest,
     ZLandingPosts,
   },
 };
