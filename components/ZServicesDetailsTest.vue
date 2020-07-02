@@ -15,7 +15,7 @@
           {{ item.title.toUpperCase() }}
         </span>
         <div
-          class="z-services-details__cards-container__card__content"
+          :class="`z-services-details__cards-container__card__content__${index + 1}`"
         />
         <div
           class="z-services-details__cards-container__card__overlay"
@@ -193,16 +193,96 @@ export default {
 
         &__content {
 
-          height: 480px;
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-          right: 0;
+          &__1 {
 
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          background: url('https://picsum.photos/id/1029/600/600');
+            height: 480px;
+            width: 100%;
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background: url('https://picsum.photos/id/1029/1000/600');
+
+          }
+
+          &__2 {
+
+            height: 480px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background: url('https://picsum.photos/id/1000/1000/600');
+
+          }
+
+          &__3 {
+
+            height: 480px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background: url('https://picsum.photos/id/1001/1000/600');
+
+          }
+
+          &__4 {
+
+            height: 480px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background: url('https://picsum.photos/id/1002/1000/600');
+
+          }
+
+          &__5 {
+
+            height: 480px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background: url('https://picsum.photos/id/1003/1000/600');
+
+          }
+
+          &__6 {
+
+            height: 480px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background: url('https://picsum.photos/id/1004/1000/600');
+
+          }
 
         }
 
