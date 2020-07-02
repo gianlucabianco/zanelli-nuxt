@@ -79,7 +79,7 @@ export default {
           ],
         },
         {
-          title: 'Valutazione psicodiagnostica',
+          title: 'Valutazione psico diagnostica',
           multiParagraph: [
             'È un percorso della durata di 3-5 incontri in cui lo scopo è una analisi approfondita della propria personalità, nei suoi aspetti cognitivi, emotivi e sociali, mettendo in risalto punti di forza e limiti.',
             'Può essere intrapreso con diverse motivazioni:',
@@ -167,21 +167,30 @@ export default {
 
       &__card {
 
-        height: 520px;
-        width: calc(50% - 32px);
+        height: 320px;
+        width: 280px;
 
-        margin-right: 32px;
-        margin-bottom: 64px;
+        margin-bottom: 32px;
 
         position: relative;
+
+        @screen lg {
+
+          height: 520px;
+          width: calc(50% - 32px);
+
+          margin-bottom: 64px;
+          margin-right: 32px;
+
+        }
 
         &__title {
 
           position: absolute;
-          top: 8px;
-          left: 32px;
+          top: 24px;
+          left: 16px;
 
-          font-size: 60px;
+          font-size: 30px;
           line-height: 0.96;
           font-weight: 600;
 
@@ -189,13 +198,22 @@ export default {
 
           z-index: 10;
 
+          @screen lg {
+
+            top: 8px;
+            left: 32px;
+
+            font-size: 60px;
+
+          }
+
         }
 
         &__content {
 
           &__1 {
 
-            height: 480px;
+            height: 280px;
             width: 100%;
 
             position: absolute;
@@ -207,80 +225,116 @@ export default {
             background-position: 50% 50%;
             background: url('https://picsum.photos/id/1029/1000/600');
 
+            @screen lg {
+
+              height: 480px;
+
+            }
+
           }
 
           &__2 {
 
-            height: 480px;
+            height: 280px;
             width: 100%;
             position: absolute;
             bottom: 0;
             right: 0;
 
-             background-size: cover;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: 50% 50%;
             background: url('https://picsum.photos/id/1000/1000/600');
+
+            @screen lg {
+
+              height: 480px;
+
+            }
 
           }
 
           &__3 {
 
-            height: 480px;
+            height: 280px;
             width: 100%;
             position: absolute;
             bottom: 0;
             right: 0;
 
-             background-size: cover;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: 50% 50%;
             background: url('https://picsum.photos/id/1001/1000/600');
+
+            @screen lg {
+
+              height: 480px;
+
+            }
 
           }
 
           &__4 {
 
-            height: 480px;
+            height: 280px;
             width: 100%;
             position: absolute;
             bottom: 0;
             right: 0;
 
-             background-size: cover;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: 50% 50%;
             background: url('https://picsum.photos/id/1002/1000/600');
+
+            @screen lg {
+
+              height: 480px;
+
+            }
 
           }
 
           &__5 {
 
-            height: 480px;
+            height: 280px;
             width: 100%;
             position: absolute;
             bottom: 0;
             right: 0;
 
-             background-size: cover;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: 50% 50%;
             background: url('https://picsum.photos/id/1003/1000/600');
+
+            @screen lg {
+
+              height: 480px;
+
+            }
 
           }
 
           &__6 {
 
-            height: 480px;
+            height: 280px;
             width: 100%;
             position: absolute;
             bottom: 0;
             right: 0;
 
-             background-size: cover;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: 50% 50%;
-            background: url('https://picsum.photos/id/1004/1000/600');
+            background: url('https://picsum.photos/id/1014/1000/600');
+
+            @screen lg {
+
+              height: 480px;
+
+            }
 
           }
 
@@ -288,7 +342,7 @@ export default {
 
         &__overlay {
 
-          height: 480px;
+          height: 280px;
           width: 100%;
           position: absolute;
           bottom: 0;
@@ -298,18 +352,41 @@ export default {
 
           transition: 0.5s ease-in-out;
 
+          @screen lg {
+
+            height: 480px;
+
+          }
+
           &__cta {
 
             position: absolute;
-            bottom: 40px;
-            right: 40px;
+            bottom: 16px;
+            right: 16px;
 
-            font-size: 28px;
+            padding: 8px 28px;
 
-            opacity: 0;
+            font-size: 20px;
+            text-decoration: underline;
+
             color: #dedede;
+            background-color: rgba(83, 92, 139, 0.6);
 
             transition: 0.3s ease-in-out;
+
+            @screen lg {
+
+              bottom: 40px;
+              right: 40px;
+
+              padding: 0;
+
+              opacity: 0;
+              background-color: transparent;
+
+              font-size: 28px;
+
+            }
 
           }
 
