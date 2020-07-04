@@ -149,13 +149,14 @@ export default {
 
     @screen sm {
 
-      padding: 20px 0;
+      padding: 20px 0 52px 0;
       font-size: 42px;
 
     }
 
     @screen xl {
 
+      padding-bottom: 80px;
       font-size: 56px;
 
     }
