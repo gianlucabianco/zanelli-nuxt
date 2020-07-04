@@ -37,13 +37,31 @@
       class="z-services-details__modal"
       v-if="isModalOpen"
     >
-      <div>
+      <div
+        class="z-services-details__modal__content"
+      >
         <p
           v-for="(paragraph, index) in modalContent"
           :key="index"
+          class="z-services-details__modal__content__paragraph"
         >
           {{ paragraph }}
         </p>
+        <p
+          class="z-services-details__modal__content__paragraph"
+        />
+        <p
+          class="z-services-details__modal__content__paragraph"
+        >
+          Hai qualche dubbio o esigenza particolare?
+          <br>
+          Vuoi maggiori informazioni o vuoi parlarmi di un problema specifico?
+        </p>
+        <span
+          class="z-services-details__modal__content__cta"
+        >
+          CONTATTAMI
+        </span>
       </div>
       <div
         class="z-services-details__modal__close-icon"
@@ -303,7 +321,7 @@ export default {
 
 
           color: #dedede;
-          background-color: rgba(83, 92, 139, 0.6);
+          background-color: rgba(83, 92, 139, 0.8);
 
           @media (min-width: 1800px) {
 
@@ -349,6 +367,8 @@ export default {
 
   &__modal {
 
+    /* FIXME: this is a temp UI */
+
     height: 100vh;
     width: 100vw;
 
@@ -361,11 +381,81 @@ export default {
     font-size: 20px;
 
     color: black;
-    background-color: #bad9c5;
+    background-color: #dcf2e4;
 
     overflow-y: scroll;
 
     z-index: 90;
+
+    &__content {
+
+      line-height: 1.5;
+
+        @screen md {
+
+          display: flex;
+          flex-direction: column;
+
+          width: 75%;
+
+          margin: auto;
+
+          font-size: 28px;
+
+        }
+
+        @screen lg {
+
+          width: 50%;
+          line-height: 1.6;
+
+        }
+
+      &__paragraph {
+
+        padding-bottom: 28px;
+
+      }
+
+      &__cta {
+
+          width: 280px;
+          margin: 0 20px;
+          padding: 12px 12px;
+
+          border: 2px solid black;
+          font-size: 15px;
+          font-weight: 500;
+
+          background-color: #516959;
+          color: #dcf2e4;
+
+          transition: 0.5s;
+
+          @screen lg {
+
+            font-size: 22px;
+
+            /* width: 320px; */
+
+            margin: 16px 0;
+            padding: 12px 28px;
+            border: 2px solid black;
+
+          }
+
+          &:hover {
+
+            color: #516959;
+
+            border-color: #516959;
+            background-color: #dcf2e4;
+
+          }
+
+        }
+
+    }
 
     &__close-icon {
 
