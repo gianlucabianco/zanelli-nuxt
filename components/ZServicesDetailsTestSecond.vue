@@ -55,9 +55,15 @@
   &__header {
 
     padding: 20px;
-    font-size: 42px;
+    font-size: 36px;
     font-weight: bold;
     text-decoration: underline;
+
+    @screen sm {
+
+      font-size: 42px;
+
+    }
 
   }
 
