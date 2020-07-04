@@ -14,6 +14,7 @@
         v-for="(item, index) in services"
         :key="index"
         class="z-services-details__content__card-container"
+        :class="`z-services-details__content__card-container__${index + 1}`"
       >
         <div
           class="z-services-details__content__card-container__overlay"
@@ -135,13 +136,14 @@ export default {
 
   &__header {
 
-    padding: 20px;
+    padding: 0 8px 20px 8px;
     font-size: 36px;
     font-weight: bold;
     text-decoration: underline;
 
     @screen sm {
 
+      padding: 20px 0;
       font-size: 42px;
 
     }
@@ -167,8 +169,47 @@ export default {
 
       position: relative;
 
-      background: url('https://picsum.photos/id/1029/1200/1200') no-repeat center;
-      background-size: cover;
+      &__1 {
+
+        background: url('https://picsum.photos/id/1014/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &__2 {
+
+        background: url('https://picsum.photos/id/1012/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &__3 {
+
+        background: url('https://picsum.photos/id/22/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &__4 {
+
+        background: url('https://picsum.photos/id/133/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &__5 {
+
+        background: url('https://picsum.photos/id/228/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &__6 {
+
+        background: url('https://picsum.photos/id/24/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
 
       &:after {
         content: "";
@@ -225,6 +266,7 @@ export default {
 
         @screen xl {
 
+          top: -32px;
           font-size: 56px;
 
         }
