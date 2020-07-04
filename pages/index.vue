@@ -2,7 +2,9 @@
   <section
     class="z-index"
   >
-    <z-hero-grid />
+    <z-hero-grid
+      @scroll-to-services="scrollToServices"
+    />
     <z-services-intro />
     <z-services-details />
     <z-landing-posts />
@@ -22,7 +24,23 @@ export default {
     ZServicesDetails,
     ZLandingPosts,
   },
+  methods: {
+    scrollToServices() {
+
+      const vh = Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      );
+
+      window.scrollTo(
+        {
+          top: vh - 80,
+          left: 100,
+          behavior: 'smooth',
+        }
+      );
+
+    },
+  }
 };
 </script>
-
-<style></style>
