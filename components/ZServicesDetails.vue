@@ -15,6 +15,7 @@
         :key="index"
         class="z-services-details__content__card-container"
         :class="`z-services-details__content__card-container__${index + 1}`"
+        @click="openModal( item.paragraphs)"
       >
         <div
           class="z-services-details__content__card-container__overlay"
@@ -32,17 +33,37 @@
         </span>
       </div>
     </div>
+    <div
+      class="z-services-details__modal"
+      v-if="isModalOpen"
+    >
+      <div>
+        <p
+          v-for="(paragraph, index) in modalContent"
+          :key="index"
+        >
+          {{ paragraph }}
+        </p>
+      </div>
+      <div
+        class="z-services-details__modal__close-icon"
+        @click="closeModal"
+      >
+        x
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   data: () => (
     {
       services: [
         {
           title: 'CONSULENZA PSICOLOGICA',
-          multiParagraph: [
+          paragraphs: [
             'La consulenza è un tipo di intervento breve e limitato nel tempo, in cui lo scopo è aiutare la persona a definire un problema personale, rispetto al quale si sente confusa o sente di faticare a trovare soluzioni. L\'obiettivo è fornire elementi ed indicazioni utili a fare chiarezza su ciò che sta succedendo e sulle opzioni disponibili.',
             'A volte la consulenza è sufficiente per la persona, fornendo una visione più chiara e realistica di sè e del problema e permettendo di affrontarlo con successo.',
             'Altre volte è il primo step, fondamentale, per intraprendere un percorso più approfondito, come una psicoterapia.'
@@ -50,11 +71,11 @@ export default {
         },
         {
           title: 'SOSTEGNO PSICOLOGICO',
-          singleText: 'È un tipo di intervento a cadenza bisettimanale o mensile, in cui la persona ha uno spazio per esprimersi e ricevere ascolto e accoglimento rispetto ad una problematica, ma senza che ci sia l\'obiettivo di produrre un cambiamento di sè.',
+          paragraphs: ['È un tipo di intervento a cadenza bisettimanale o mensile, in cui la persona ha uno spazio per esprimersi e ricevere ascolto e accoglimento rispetto ad una problematica, ma senza che ci sia l\'obiettivo di produrre un cambiamento di sè.'],
         },
         {
           title: 'PSICOTERAPIA INDIVIDUALE',
-          multiParagraph: [
+          paragraphs: [
             'La psicoterapia è un percorso di durata indefinita, che la persona intraprende con lo scopo di attivare un cambiamento di sè.',
             'È tipicamente a cadenza settimanale, con incontri della durata di un\'ora.',
             'Il punto di partenza è sempre una fase di Consulenza, della durata di 3-5 sedute in cui si va a delineare il problema presente, la storia della persona e si definiscono gli obiettivi del cambiamento desiderato.',
@@ -66,7 +87,7 @@ export default {
         },
         {
           title: 'EMDR',
-          multiParagraph: [
+          paragraphs: [
             'L\'acronimo EMDR sta per "Desensibilizzazione e rielaborazione tramite i movimenti oculari".',
             'È una tecnica psicoterapeutica molto strutturata che facilita il trattamento di problematiche correlate allo stress traumatico, sia conseguente a veri e propri eventi traumatici, sia ad esperienze più comuni vissute come emotivamente stressanti. L\'EMDR utilizza i movimenti oculari (o altre forme di stimolazione alternata destro/sinistra) in associazione alla focalizzazione sul ricordo dell\'esperienza traumatica. La psicologa americana Francine Shapiro, inventrice del metodo, scoprì infatti che i movimenti oculari alternati riducevano l\'intensità dei pensieri negativi disturbanti.',
             'La base teorica dell\'EMDR è l\'approccio AIP (modello di elaborazione adattiva dell\'informazione), secondo cui gli eventi traumatici sono immagazzinati in memoria insieme alle emozioni, percezioni, cognizioni e sensazioni fisiche disturbanti che hanno caratterizzato quel dato momento. Tutte queste informazioni restano come “congelate” nelle reti cerebrali in modo disfunzionale: questo non ne permette l\'elaborazione e continua a provocare malessere nella persona e, in molti casi, patologie come il disturbo post-traumatico da stress. Gli avvenimenti più dolorosi lasciano infatti profonde cicatrici anche a livello cerebrale, facendo sì che molte persone continuino a soffrire di grande disagio anche dopo decenni dall\'evento scatenante. I movimenti oculari dell\'EMDR (simili a quelli del sonno REM, quindi del tutto naturali) riattivano la capacità di autoguarigione del cervello, che trova così le risorse per metabolizzare l\'evento traumatico. Dalle numerose ricerche evidence-based, che si sono servite di strumenti come la fMRI, è emerso che dopo le sedute EMDR si osserva uno spostamento significativo dell\'attività elettrica dalle aree cerebrali visive alle regioni cerebrali frontali e temporo-parietali. Dunque, l\'elaborazione del trauma si muove da aree che sono collegate ad un ricordo visivo, emotivo e intenso (associato a vissuti di paura e terrore destabilizzanti), ad aree deputate ad un ruolo cognitivo e associativo: in questo modo i ricordi legati al trauma ne sono ridimensionati, così come le emozioni negative ad esso collegate. Dopo il lavoro, le persone ricordano i fatti legati all\'evento traumatico, ma sentono maggiore distacco emotivo, sentendolo parte del passato: riescono dunque a vedere l\'evento disturbante e sé stessi da una nuova prospettiva.',
@@ -76,7 +97,7 @@ export default {
         },
         {
           title: 'VALUTAZIONE PSICO DIAGNOSTICA',
-          multiParagraph: [
+          paragraphs: [
             'È un percorso della durata di 3-5 incontri in cui lo scopo è una analisi approfondita della propria personalità, nei suoi aspetti cognitivi, emotivi e sociali, mettendo in risalto punti di forza e limiti.',
             'Può essere intrapreso con diverse motivazioni:',
             '- Per conoscersi meglio',
@@ -87,7 +108,7 @@ export default {
         },
         {
           title: 'VALUTAZIONE DSA IN ETÀ EVOLUTIVA',
-           multiParagraph: [
+           paragraphs: [
              'I Disturbi Specifici dell\'Apprendimento (DSA) sono disturbi evolutivi che emergono nel corso dell\'apprendimento scolastico. Essi riguardano l\'inadeguata acquisizione:',
              '- delle abilità di lettura, nel caso della Dislessia',
              '- delle competenze ortografiche di scrittura, nella Disortografia',
@@ -108,8 +129,26 @@ export default {
            ],
         },
       ],
+      isModalOpen: false,
+      modalContent: [],
     }
   ),
+  methods: {
+    openModal(
+      content
+    ) {
+
+        this.isModalOpen = true;
+        this.modalContent = content;
+
+    },
+    closeModal() {
+
+      this.isModalOpen = false;
+      this.modalContent = [];
+
+    },
+  },
 };
 </script>
 
@@ -303,6 +342,51 @@ export default {
         }
 
       }
+
+    }
+
+  }
+
+  &__modal {
+
+    height: 100vh;
+    width: 100vw;
+
+    padding: 60px 40px 60px 40px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    font-size: 20px;
+
+    color: black;
+    background-color: #bad9c5;
+
+    overflow-y: scroll;
+
+    z-index: 90;
+
+    &__close-icon {
+
+      height: 60px;
+      width: 60px;
+
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      margin-right: 8px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 40px;
+
+      color: #516959;
+
+      z-index: 100;
 
     }
 
