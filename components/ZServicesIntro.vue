@@ -76,9 +76,21 @@
 
         padding: 44px 0;
 
+        @screen sm {
+
+          padding: 60px 0;
+
+        }
+
+        @screen md {
+
+          padding: 80px 0;
+
+        }
+
         @screen xl {
 
-          padding-right: 32px;
+          padding: 100px 32px 100px 0;
           max-width: 50%;
 
         }
