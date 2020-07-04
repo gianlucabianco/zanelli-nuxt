@@ -1,35 +1,47 @@
 <template>
-  <div class="z-services-details">
-    <h2 class="z-services-details__title">SERVIZI OFFERTI</h2>
-    <!-- TODO: / FIXME: v-for + data obj -->
-    <div
-      class="z-services-details__accordion-container"
+  <div
+    class="z-services-details"
+  >
+    <h3
+      class="z-services-details__header"
     >
-      <z-accordion
-        v-for="(item, index) in accordion"
+      Servizi offerti
+    </h3>
+    <div
+      class="z-services-details__content"
+    >
+      <div
+        v-for="(item, index) in services"
         :key="index"
-        :title="item.title"
-        :content="item.content"
-        :single-text="item.singleText"
-        :multi-paragraph="item.multiParagraph"
-        class="z-services-details__accordion-container__item"
-      />
+        class="z-services-details__content__card-container"
+        :class="`z-services-details__content__card-container__${index + 1}`"
+      >
+        <div
+          class="z-services-details__content__card-container__overlay"
+        >
+          <div
+            class="z-services-details__content__card-container__overlay__cta"
+          >
+            SCOPRI DI PIÚ
+          </div>
+        </div>
+        <span
+          class="z-services-details__content__card-container__title"
+        >
+          {{ item.title }}
+        </span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import ZAccordion from '~/components/ZAccordion.vue';
-
 export default {
-  components: {
-    ZAccordion,
-  },
   data: () => (
     {
-      accordion: [
+      services: [
         {
-          title: 'Consulenza psicologica',
+          title: 'CONSULENZA PSICOLOGICA',
           multiParagraph: [
             'La consulenza è un tipo di intervento breve e limitato nel tempo, in cui lo scopo è aiutare la persona a definire un problema personale, rispetto al quale si sente confusa o sente di faticare a trovare soluzioni. L\'obiettivo è fornire elementi ed indicazioni utili a fare chiarezza su ciò che sta succedendo e sulle opzioni disponibili.',
             'A volte la consulenza è sufficiente per la persona, fornendo una visione più chiara e realistica di sè e del problema e permettendo di affrontarlo con successo.',
@@ -37,11 +49,11 @@ export default {
           ],
         },
         {
-          title: 'Sostegno psicologico',
+          title: 'SOSTEGNO PSICOLOGICO',
           singleText: 'È un tipo di intervento a cadenza bisettimanale o mensile, in cui la persona ha uno spazio per esprimersi e ricevere ascolto e accoglimento rispetto ad una problematica, ma senza che ci sia l\'obiettivo di produrre un cambiamento di sè.',
         },
         {
-          title: 'Psicoterapia individuale',
+          title: 'PSICOTERAPIA INDIVIDUALE',
           multiParagraph: [
             'La psicoterapia è un percorso di durata indefinita, che la persona intraprende con lo scopo di attivare un cambiamento di sè.',
             'È tipicamente a cadenza settimanale, con incontri della durata di un\'ora.',
@@ -63,7 +75,7 @@ export default {
           ],
         },
         {
-          title: 'Valutazione psicodiagnostica',
+          title: 'VALUTAZIONE PSICO DIAGNOSTICA',
           multiParagraph: [
             'È un percorso della durata di 3-5 incontri in cui lo scopo è una analisi approfondita della propria personalità, nei suoi aspetti cognitivi, emotivi e sociali, mettendo in risalto punti di forza e limiti.',
             'Può essere intrapreso con diverse motivazioni:',
@@ -74,7 +86,7 @@ export default {
           ],
         },
         {
-          title: 'Valutazione DSA in età evolutiva',
+          title: 'VALUTAZIONE DSA IN ETÀ EVOLUTIVA',
            multiParagraph: [
              'I Disturbi Specifici dell\'Apprendimento (DSA) sono disturbi evolutivi che emergono nel corso dell\'apprendimento scolastico. Essi riguardano l\'inadeguata acquisizione:',
              '- delle abilità di lettura, nel caso della Dislessia',
@@ -102,63 +114,199 @@ export default {
 </script>
 
 <style
-  lang="scss"
   scoped
+  lang="scss"
 >
-  .z-services-details {
 
-    width: 100%;
-    height: 100%;
+.z-services-details {
 
-    padding: 40px 20px;
+  height: 100%;
+  width: 100%;
 
-    font-size: 22px;
-    line-height: 1.8;
+  padding: 40px 20px;
 
-    @screen lg {
+  font-size: 22px;
+  line-height: 1.8;
 
-      width: 75%;
-      margin: auto;
+  @screen lg {
 
-       padding-left: 0;
-      padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+
+    width: 75%;
+
+    margin: auto;
+    padding: 20px 0;
+
+  }
+
+  &__header {
+
+    padding: 0 8px 20px 8px;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: underline;
+
+    @screen sm {
+
+      padding: 20px 0;
+      font-size: 42px;
 
     }
 
     @screen xl {
 
-      padding-right: 32px;
+      font-size: 56px;
 
     }
 
-    &__title {
+  }
 
-      width: 100%;
-      padding-bottom: 32px;
-      font-size: 26px;
-      font-weight: 800;
+  &__content {
 
-      color: #372E59;
-      border-bottom: 1px solid #372E59;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 
-    }
+    &__card-container {
 
-    &__accordion-container {
+      width: calc(100% - 16px);
+      margin: 32px 0;
 
-      display: flex;
-      flex-direction: column;
+      position: relative;
 
-      width: 100%;
+      &__1 {
 
-      &__item {
+        background: url('https://picsum.photos/id/1014/1200/1200') no-repeat center;
+        background-size: cover;
 
-        /* height: 40%;
-        width: 40%; */
+      }
+
+      &__2 {
+
+        background: url('https://picsum.photos/id/1012/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &__3 {
+
+        background: url('https://picsum.photos/id/22/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &__4 {
+
+        background: url('https://picsum.photos/id/133/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &__5 {
+
+        background: url('https://picsum.photos/id/228/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &__6 {
+
+        background: url('https://picsum.photos/id/24/1200/1200') no-repeat center;
+        background-size: cover;
+
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      @screen md {
+
+        width: calc(50% - 40px);
+        margin-right: 40px;
+
+      }
+
+      @media (min-width: 1800px) {
+
+        width: calc(33% - 40px);
+        margin-right: 40px;
+
+      }
+
+      &__overlay {
+
+        width: 100%;
+        height: 100%;
+
+        transition: 0.5s ease-in-out;
+
+        position: relative;
+
+        &:hover {
+
+          background-color: rgba(83, 92, 139, 0.6);
+
+        }
+
+        &__cta {
+
+          position: absolute;
+          right: 24px;
+          bottom: 24px;
+
+          font-size: 22px;
+          padding: 4px 20px;
+
+
+          color: #dedede;
+          background-color: rgba(83, 92, 139, 0.6);
+
+          @media (min-width: 1800px) {
+
+            font-size: 28px;
+            padding: 4px 20px;
+
+          }
+
+        }
+
+      }
+
+      &__title {
+
+        position: absolute;
+        top: -20px;
+        left: 16px;
+
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 0.96;
+
+        color: #372E59;
+
+        @screen md {
+
+          font-size: 38px;
+
+        }
+
+        @screen xl {
+
+          top: -32px;
+          font-size: 56px;
+
+        }
 
       }
 
     }
 
   }
+
+}
 
 </style>
