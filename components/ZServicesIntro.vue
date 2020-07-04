@@ -9,9 +9,7 @@
           Mi occupo di adulti che stanno attraversando momenti di difficoltà personale e relazionale, tali da comportare sofferenza e di coloro che hanno l'interesse a conoscersi meglio per intraprendere un precorso di consapevolezza e cambiamento.
         </p>
       </div>
-      <div class="z-hero-services__content__img-or-quote">
-        "Quote or image here"
-      </div>
+      <div class="z-hero-services__content__img-or-quote" />
     </div>
   </div>
 </template>
@@ -47,6 +45,9 @@
       &__img-or-quote {
 
         display: none;
+
+        background: url('https://ak1.picdn.net/shutterstock/videos/1009533521/thumb/1.jpg') no-repeat center;
+        background-size: cover;
 
         @screen xl {
 
