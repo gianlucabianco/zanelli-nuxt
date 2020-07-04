@@ -5,7 +5,12 @@
         <p class="z-hero-grid__cta-content__card__description">
           Ogni lungo viaggio inizia con un piccolo passo.
         </p>
-        <div class="z-hero-grid__cta-content__card__btn">
+        <div
+          class="z-hero-grid__cta-content__card__btn"
+          @click="$emit(
+            'scroll-to-services'
+          )"
+        >
           Scopri come posso accompagnarti
         </div>
       </div>
