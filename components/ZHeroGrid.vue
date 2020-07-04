@@ -49,7 +49,19 @@
         "bg"
         "cta-content";
 
-      max-height: 812px;
+      max-height: 840px;
+
+      @screen xl {
+
+        max-height: calc(100vh - 187px);
+
+      }
+
+      @media (min-width: 1440px) {
+
+        max-height: none;
+
+      }
 
     }
 
