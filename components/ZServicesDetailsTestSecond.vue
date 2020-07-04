@@ -18,7 +18,13 @@
       >
         <div
           class="z-services-details__content__card-container__overlay"
-        />
+        >
+          <div
+            class="z-services-details__content__card-container__overlay__cta"
+          >
+            SCOPRI DI PIÚ
+          </div>
+        </div>
         <span
           class="z-services-details__content__card-container__title"
         >
@@ -238,9 +244,33 @@ export default {
 
         transition: 0.5s ease-in-out;
 
+        position: relative;
+
         &:hover {
 
           background-color: rgba(83, 92, 139, 0.6);
+
+        }
+
+        &__cta {
+
+          position: absolute;
+          right: 24px;
+          bottom: 24px;
+
+          font-size: 22px;
+          padding: 4px 20px;
+
+
+          color: #dedede;
+          background-color: rgba(83, 92, 139, 0.6);
+
+          @media (min-width: 1800px) {
+
+            font-size: 28px;
+            padding: 4px 20px;
+
+          }
 
         }
 
